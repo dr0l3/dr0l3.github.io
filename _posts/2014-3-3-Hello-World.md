@@ -5,6 +5,8 @@ published: true
 ---
 Hello world in different languages.
 
+Despite the simplicity of the programs involved you can already see design decisions. Two of the languages require imports. The fact that imports are required in not of interest, but rather what is imported. In both cases monads, which will be the subject of a later post. Requiring printing which is strictly speaking IO to go through monads is what makes these languages pure (as in purely functional). This will also be the subject of a later post. But for now let's just look at silly programs.
+
 ### Java
 
 {% highlight java lineos %}
@@ -16,6 +18,7 @@ public class HelloWorld {
 {% endhighlight %}
 
 ### Scala
+
 {% highlight scala lineos %}
 object HelloWorld extends App {
 	println("Hello world")
@@ -23,6 +26,7 @@ object HelloWorld extends App {
 {% endhighlight %}
 
 ### Haskell
+
 {% highlight haskell lineos %}
 module Main where
 
@@ -33,7 +37,8 @@ main = putStrLn "Hello, World!"
 {% endhighlight %}
 
 ### Purescript
-{% highlight Purescript lineos %}
+
+{% highlight purescript lineos %}
 module Main where
 
 import Prelude
@@ -46,7 +51,8 @@ main = do
 {% endhighlight %}
 
 ### Rust
-{% highlight Purescript lineos %}
+
+{% highlight rust lineos %}
 fn main() {
     println!("Hello World!");
 }
