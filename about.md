@@ -2,14 +2,13 @@
 layout: page
 title: About
 permalink: /about/
+published: true
 ---
 
-Some information about you!
+### The essentials
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+My name is Rune. I like to code and do other things with computers.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+runedrolepedersen at google mail 
