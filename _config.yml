@@ -6,11 +6,10 @@
 name: DroleTours
 
 # Short bio or description (displayed in the header)
-description: Musings and pocket philosophy in the space of Functional Programming | DevOps | Whatever tickles my fancy
+description: Functional Programming | DevOps | Whatever tickles my fancy
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://avatars0.githubusercontent.com/u/1401440?v=3&u=c4d85c056e5e25984549be7be9fa1cd3355b3ea7&s=400
-
+avatar: #
 #
 # Flags below are optional
 #
