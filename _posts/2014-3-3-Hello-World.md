@@ -11,4 +11,4 @@ public class HelloWorld {
     	System.out.println("Hello world");
     }
 }
-{% end highlight %}
+{% endhighlight %}
