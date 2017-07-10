@@ -3,7 +3,7 @@ layout: post
 title: Hello World!
 published: true
 ---
-As is customary we will start out with hello world. The aim of this blog is to present material that I consider interesting. Hopefully someone out there finds its either educational or entertaining. If not I still had fun creating it :)
+As is customary we will start out with hello world. The aim of this blog is to present material that I consider interesting. Hopefully someone out there finds its either educational or entertaining. If not at least I had fun creating it :)
 
 Despite the simplicity of the programs listed below you can already see design decisions. Two of the languages require imports. The fact that imports are required is not _that_ interesting, but rather what is imported. In both cases monads, which will be the subject of a later post. Requiring printing which is strictly speaking IO to go through monads is what makes these languages pure (as in purely functional). This will also be the subject of a later post. But for now let's just look at silly programs.
 
