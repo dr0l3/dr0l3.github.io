@@ -3,5 +3,12 @@ layout: post
 title: Hello World!
 published: true
 ---
+Hello world in different languages
 
-This is some random text. Dont mind the text. It will get updated with something useful in due time.
+{% highlight java lineos %}
+public class HelloWorld {
+	public static void main(String[] args){
+    	System.out.println("Hello world");
+    }
+}
+{% end highlight %}
