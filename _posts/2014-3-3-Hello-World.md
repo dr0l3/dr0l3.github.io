@@ -5,7 +5,9 @@ published: true
 ---
 As is customary we will start out with hello world. The aim of this blog is to present material that I consider interesting. Hopefully someone out there finds its either educational or entertaining. If not at least I had fun creating it :)
 
-Despite the simplicity of the programs listed below you can already see design decisions. Two of the languages require imports. Required imports is not _that_ interesting, but the imports themselves are the interesting parts. In both cases we import monads, which will be the subject of a later post. Requiring printing which is strictly speaking IO to go through monads is what makes these languages pure (as in purely functional). This will also be the subject of a later post. But for now let's just look at silly programs.
+I am not quite sure what the point of this particular post is, but hopefully we will figure that out as we move along. Lets jump in.
+
+Below is examples of hello world programs in different languages. Despite the simplicity of the programs  you can already see design decisions. Some of the languages require imports. Requiring imports is not _that_ interesting, but the imports themselves are the interesting parts. In two cases we import monads, which will be the subject of a later post. Requiring printing which is strictly speaking IO and this a sideeffect to go through monads is what makes these languages pure (as in purely functional). This will also be the subject of a later post. But for now let's just look at silly programs.
 
 ### Java
 
@@ -15,6 +17,19 @@ public class HelloWorld {
     	System.out.println("Hello world");
     }
 }
+{% endhighlight %}
+
+### Go
+
+{% highlight go lineos %}
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("hello world")
+}
+
 {% endhighlight %}
 
 ### Scala
