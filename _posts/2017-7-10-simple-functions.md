@@ -27,7 +27,9 @@ The people who chose the contract breaking design thinks they have good reasons 
 This function abides by the contract that everything that can vary inside the function comes in through the variables and every effect of the program is visible in the return value. One very important feature of such a function is that when called with the same input the function will yield the same output, every time. This is simply a consequence of being pure. If you take two identical inputs and put them into the same function, where everything that can vary is the same, you get the same output. If the inputs were different then... the inputs were different. If anything inside the functions varies given the same input the functions is not pure. All of this means a couple of things:
 - The function can be run in isolation, it doesn't require any context aside from variables
 - You can test the function in isolation
-This might seem like negligbe benefits, but as programs grow large it becomes increasingly time consuming to find and recreate the exact conditions present at the time a function was called. If the code is sufficiently badly written it might even be impossible. As such figuring out why code fails (or succeeds) takes longer and leads to slower debugging and development.
+- The result of the function can be cached (memoized) 
+The two first ones might seem like negligbe benefits, but as programs grow large it becomes increasingly time consuming to find and recreate the exact conditions present at the time a function was called. If the code is sufficiently badly written it might even be impossible. As such figuring out why code fails (or succeeds) takes longer and leads to slower debugging and development.
+The third benefit is a clear cut performance benefit you get free of charge. It might not always make sense to cache the result of a function call, but at least you can.
 
 ### Closures and other functions with implicit context
 - Functions now depend on their context, cant run without
