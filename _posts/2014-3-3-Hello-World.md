@@ -7,7 +7,7 @@ As is customary we will start out with hello world. The aim of this blog is to p
 
 I am not quite sure what the point of this particular post is, but hopefully we will figure that out as we move along. Lets jump in.
 
-Below is examples of hello world programs in different languages. Despite the simplicity of the programs  you can already see design decisions. Some of the languages require imports. Requiring imports is not _that_ interesting, but the imports themselves are the interesting parts. In two cases we import monads, which will be the subject of a later post. Requiring printing which is strictly speaking IO and thus a sideeffect to go through monads is what makes these languages pure (as in purely functional). This will also be the subject of a later post. But for now let's just look at silly programs.
+Below is examples of hello world programs in different languages. Despite the simplicity of the programs  you can already see design decisions. Printing is one of the most basic features of any useful language, yet it is done differently. In two cases we utilize monads, which will be the subject of a later post. Requiring printing which is strictly speaking IO and thus a sideeffect to go through monads is what makes these languages pure (as in purely functional). This will also be the subject of a later post. But for now let's just look at silly programs.
 
 ### Java
 
@@ -44,8 +44,6 @@ object HelloWorld extends App {
 
 {% highlight haskell lineos %}
 module Main where
-
-import Lib
 
 main :: IO ()
 main = putStrLn "Hello, World!"
