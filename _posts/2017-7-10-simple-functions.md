@@ -31,14 +31,16 @@ This function abides by the contract that everything that can vary inside the fu
 The two first ones might seem like negligbe benefits, but as programs grow large it becomes increasingly time consuming to find and recreate the exact conditions present at the time a function was called. If the code is sufficiently badly written it might even be impossible. As such figuring out why code fails (or succeeds) takes longer and leads to slower debugging and development.
 The third benefit is a clear cut performance benefit you get free of charge. It might not always make sense to cache the result of a function call, but at least you can.
 
-### Closures and other functions with implicit context
+### Functitons with external context
 - Functions now depend on their context, cant run without
 - Functions require the same context to produce the same result
 - Functions now needs to be tested in a production equivalent environment
+- Function can no longer be treated as a black box at the call site
 
 ### Functions with side-effects
 - Functions now excibit behavior that is not visible from its types
 - Need to read the entire function (and all of its non-pure sub calls) to completely understand what a function does, even for a single input
+- Side effects comes in many shapes and sizes e.g. Exceptions
 
 ### Conclusions
 - Pure functions have nice benefits that non-pure functions dont have
