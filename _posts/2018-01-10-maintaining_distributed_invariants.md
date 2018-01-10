@@ -1,8 +1,6 @@
 ---
 published: true
 ---
-## Maintaining distributed invariants
-
 Many systems have, as a more or less central part, the task of upholding some kind of invariant. Examples include
 
 - No payments from an account without money in it
