@@ -11,4 +11,4 @@ My name is Rune. I like to code and do other things with computers. All views ex
 
 ### Contact me
 
-runedrolepedersen at google mail
+runedrolepedersen at g mail dot com
