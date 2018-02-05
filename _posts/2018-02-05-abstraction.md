@@ -1,0 +1,126 @@
+---
+published: false
+---
+"Being abstract is something profoundly different from being vague … The purpose of abstraction is not to be vague, but to create a new semantic level in which one can be absolutely precise."
+	- Dijkstra
+
+I like this quote. Unfortunately, I think it is only partially correct. Before I go ahead with my attempt to dismantle this quote I would like to say that the intent of this post is not to discredit or disrespect Dijkstra. He is clearly one of the greatest computer scientist ever. With him being dutch i guess he can respect my position :). The reason the above quote is only partially correct is because I believe there are two purposes of abstraction, not just one. Futhermore the two purposes are in a way each others opposite (or dual if you are so inclined). This is important because not understanding this distinction is one of the greatest obstacles to understanding the why of functional or categorical programming - in my opinion. It is also a major contributor to strategic mistakes when coding.
+
+When learning about functional programming it is common to come across the sentence "We are abstracting over x" or some variant thereof. You can categorize these x's into two distinct groups. The group that Dijkstra is talking about where we add abstraction to gain precision and the other group where we add abstraction to subtract precision. In fact we are gonna see that there are two ways you could define precision and that these two in a way are each others opposites. You could say that the imprecision of the definition of precision is the root cause for this entire debacle :)
+
+A great example of the first kind of abstraction is the Either monad. A great example of the second kind is the Number supertype or typeclass, either one will do. The Either monad abstracts over possible failure, the number typeclass abstracts over possible concrete representations of numbers.
+
+These two abstractions serve two very different functions. The Either monad is as Dijkstra so elegantly puts it about "creating a new semantic level where absolute precision is possible". Take the case of numerical division. Division by zero is undefined. Languages that choose to implement division with the following signature thus have a precision problem:
+
+``` scala
+def divide(a: Int, b: Int): Int
+```
+
+This signature is lying. It can't guarantee that the result is always an Int unless it wants to return INFINITY or some other value that in some way violate the properties of math. Either solves this problem by introducing the possibility of failure.
+
+
+``` scala
+def divide(a: Int, b: Int): Either[Exception,Int]
+```
+
+Now the function is no longer lying. It either returns an exception (DivideByZeroException) or an Int. An interesting tradeoff has happened here. We now have a guarantee for the structure of the output, but we now have less knowledge of the concrete representation. We cant store the result of this function in a variable of type Int without lying.
+
+The number typeclass serves a different purpose. It is about subtracting precision, on purpose. The divide function above only works on Ints. It is too precise. It would be neat to have it work on any number. The code is practically the same for all number types anyway (at least the non-imaginary ones).
+
+``` scala
+def divide[N :< Number](a: N, b: N): Either[Exception,N]
+```
+
+This function now works on all types that are subtypes of Number. We could make an implementation that does the same for the Number typeclass. The principle is however the same. Instead of operating on a single represenation we allow it to work on all representations provided the representation abides by the "is a number" or "has a number instance" rules. Abstracting over possible representations of numbers did not give us any more security than we had before. No new semantic level was created. In fact when reading the function we know less about the return type than we knew before we converted it from Either[Exception,Int]. But we made it more generic, it can now be used for more things. 
+
+At first glance it is not obvious why these two types of abstraction are each others opposite. We need to dive deeper. The missing peice of information is the "size of the types". An example is probably in order. The size of a boolean is 2. There are only two possible values that a boolean can take, true and false. If we for a second pretend that the only chars available are the lowercase variants of characters in the english alphabet then the size of the Char type is 26. The possibilities are 'a', 'b', 'c' ... Restricting us to uppercase will also yield a size of 26. Restricting us to both lower and upper case gives a size of 52. The principle is probably clear at this point. What isn't clear is what that has to do with subtracting and adding precision.
+
+When we changed the returntype of the divide function we went from having 2^(32) possible values to having 2^(32) + a bunch for each possible value of Exception (there is a lot, I am not gonna count). So we have added more possibilities to the return type, wouldn't that make it less precise? Yes, precision is poorly defined in this context. But then again we didn't just have 2^(32) possible values when Int was the return type we also had the same possibilities before, they were just not declared in the return type. That is what is meant by absolute precision. The extra expressiveness of the Either type allowed us to express all the possible outcomes. Lets call this ability to express all outcomes exhaustive precision. We did however pay a price, we have more possible values of the return type which means we can say less about the behavior of the program going forward than if we just had Int as the return type. We are in a sense, again less precise. Lets call this type of precision analytical precision.
+
+How does these things interact with each other? Well if we add exhaustive precision, like we did with either, then we must have increased the size of the type. Thus we have more possible values. Thus we must have less analytical precision. 
+
+Options:
+- +exhaust -> -analysis = Yes
+- +exhaust -> +analysis = No
+- -exhaust -> -analysis = Yes/irrelevant
+- -exhaust -> +analysis = If type was too big
+- +analysis -> -exhaust = If type was not too big
+- +analysis -> +exhaust = No
+- -analysis -> -exhaust = No/irrelevant
+- -analysis -> +exhaust = If type is not big enough
+
+More Exhaustive precision -> size of type not big enough -> More possible values needed -> less analytical precision
+
+What about the other way. If we decrease exhaustive precision do we then gain analytical precision? Yes and no. Sure there are less possible values in Int than in Either[Exception,Int]. But really we are lying. The possible exception is still there even if we dont declare it in the return type. So we dont really gain analytical precision by decreasing exhaustive precision.
+
+What if we take a different example? Lets say we were stupid and decided to use an Int to signify the presence or lack of presence of some property. All even values mean true and all odd values mean false. Clearly a wasteful representation. In this case reducing the expressiveness is fine we dont lose any exhaustive precision by converting the Int to a Boolean. We reduced the number of values the type could take and increased analytical precision.
+
+Less possible value -> less expressiveness -> More analytical precision. Can still have absolute exhaustive precision if the domain allows it.
+
+It seems exhaustive and analytical precision are each other opposite, in some cases. In other cases they are unrelated.
+
+If we return to our two examples of Either and Number then another way of looking at them is that in the Either case we retained the size of the input types, but increased the type of the output type. This meant more safety at the cost of analytical precision.
+
+In the Number case we increased the size of the input type and increased the size of the output type. In that case we gained more uses, but once again decresed analytical precision.
+
+A pattern is starting to emerge. We lose analytical precision by adding abstraction. For this lack of precision we can either buy exhaustive precision or code reuse. This was quite the deep dive, but I believe 
+
+first type of abstraction -> Return type bigger, but input type same size -> More safety but less analytical precision
+Type safety.
+Second type of abstraction -> Input type bigger, but output type really the same -> More uses but less analytical precision
+Creating infrastructure for other code.
+
+The rule
+Abstraction -> reduces analytical precision, you should either reduce code size or increase safety.
+
+Once you "get" the quote it is selfevident, but before that it just seems like nonsense. What does it mean to "create a new semantic level" anyway!?! Hopefully this post should ease the way to selfevident part :)
+
+
+## Abstaction to create safety
+Hack your way to solution, be as concrete as is needed.
+Add abstraction to until your code is safe.
+Keep adding abstraction until you no longer gain safety
+Keep subtracting abstraction until you lose safety.
+
+## Abstraction to increase code reuse
+Hack your way to a solution, be as concrete as is needed.
+Keep generalizing until the code is becomes longer.
+
+## Abstraction to increase testability
+Hack your way to a solution, be as concrete as is needed.
+Keep adding abstraction until the code is as testable as you need.
+
+
+Not enough expressiveness -> lying
+Add expressiveness -> Structure -> Guarantees
+Structure -> more expressiveness required -> More text unless the structure is implicit
+abstraction -> generic -> less structure
+Abstraction -> More expressiveness OR generic -> More guarantees OR less guarantees
+abstraction + less guarantees -> Hopefully less code
+abstraction + more guarantees -> Hopefully less bugs
+
+
+Making things generic is subtracting structure from it, usually used to avoid repetition. So if making things more generic introduces more text than doing it the concrete way then you are making a mistake (unless it has some other benefit that is very important).
+
+All of the below methods can be used to divide two numbers, but it is clear that the very concrete one offers us the most insight into the programs behavior at runtime. In this case that it will crash. On the contrary the very concrete method is also very narrow in its possible uses. If we want to divide other numbers than 1 and 0 as well we would probably be better of using the concrete method as we wouldn’t need to create a new method for each new computation.
+
+def verygeneric[A,B,C](v1: A, v2: B, f: (A,B) => C) = f(v1,v2)
+def generic[A <: Number](v1: A, v2: A, f: (A,A) => A) = f(v1,v2)
+def concrete(v1: Int, v2: Int) = v1/v2
+def veryconcrete(1,0)=1/0
+
+The bread and butter reasons for going into functional programming is to reduce the need to keep context in your head when programming and to be able to reason more accurately about the behavior of our programs before running them. It is worth it to keep this in mind when selecting a level of abstraction when programming.
+
+So i guess the way to do stuff is:
+Hack your way to a solution, be as concrete as you need to be
+Keep generalizing it until the generalization makes the code longer
+
+
+Abstraction and change
+Can abstraction help reduce/eliminate need for change?
+Is concrete or abstract code better when dealing with a changing codebase?
+Abstraction and application code vs library code?
+Abstraction and use the welltrodden paths?
+## A New Post
+
+Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
