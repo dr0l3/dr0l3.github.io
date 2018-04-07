@@ -1,6 +1,6 @@
 ---
 published: true
-title: Maintaing distibuted invariants!
+title: Strategies for testing effectfull systems
 ---
 Many systems have, as a more or less central part, the task of upholding some kind of invariant. Examples include
 
