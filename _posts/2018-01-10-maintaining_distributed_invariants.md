@@ -1,6 +1,6 @@
 ---
 published: true
-title: Strategies for testing effectfull systems
+title: Maintaining distributed invariants
 ---
 Many systems have, as a more or less central part, the task of upholding some kind of invariant. Examples include
 
