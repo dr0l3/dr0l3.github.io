@@ -69,9 +69,14 @@ import org.scalacheck.ScalacheckShapeless._
 import org.scalacheck._
 
 class SanityCheck extends Properties("sanity") {
-  implicit val uuidArb = Arbitrary[UUID](Gen.uuid)
-  implicit val ageArb = Arbitrary[Int](Gen.posNum[Int].map(_ % 50))
-  implicit val nameArb = Arbitrary[String](Gen.alphaStr.suchThat(_.length > 2).map(_.takeRight(10)))
+  implicit val uuidArb = 
+    Arbitrary[UUID](Gen.uuid)
+  implicit val ageArb = 
+    Arbitrary[Int](Gen.posNum[Int].map(_ % 50))
+  implicit val nameArb = 
+    Arbitrary[String](Gen.alphaStr
+      .suchThat(_.length > 2)
+      .map(_.takeRight(10)))
   implicitly[Arbitrary[User]]
 
   property("Add witnessed by get") = {
@@ -91,9 +96,12 @@ class SanityCheck extends Properties("sanity") {
       val repo = new SimpleRepo()
       val inserted = if(insert) repo.add(user.name, user.age) else None
 
-      val before = inserted.flatMap(user => repo.get(user.id))
-      val updated = inserted.flatMap(user => repo.update(user.copy(age = user.age + 1)))
-      val after = inserted.flatMap(user => repo.get(user.id))
+      val before = inserted
+        .flatMap(user => repo.get(user.id))
+      val updated = inserted
+        .flatMap(user => repo.update(user.copy(age = user.age + 1)))
+      val after = inserted
+        .flatMap(user => repo.get(user.id))
 
       insert == (before != after) &&
       updated == after
@@ -103,11 +111,16 @@ class SanityCheck extends Properties("sanity") {
   property("Delete witnessed by get") = {
     forAll { (name: String, age: Int, insert: Boolean) =>
       val repo = new SimpleRepo()
-      val inserted: Option[User] = if(insert) repo.add(name, age) else None
+      val inserted = 
+        if(insert) repo.add(name, age) 
+        else None
 
-      val before = inserted.flatMap(user => repo.get(user.id))
-      val deleted = inserted.flatMap(repo.delete)
-      val after = inserted.flatMap(user => repo.get(user.id))
+      val before = inserted
+        .flatMap(user => repo.get(user.id))
+      val deleted = inserted
+        .flatMap(repo.delete)
+      val after = inserted
+        .flatMap(user => repo.get(user.id))
 
       before == inserted &&
       after.isEmpty &&
@@ -120,11 +133,15 @@ class SanityCheck extends Properties("sanity") {
       val repo = new SimpleRepo()
       val inserted = repo.add(name, age)
 
-      val before = inserted.flatMap(user => repo.get(user.id))
-      val deleted = inserted.flatMap(repo.delete)
-      val between = inserted.flatMap(user => repo.get(user.id))
+      val before = inserted
+        .flatMap(user => repo.get(user.id))
+      val deleted = inserted
+        .flatMap(repo.delete)
+      val between = inserted
+        .flatMap(user => repo.get(user.id))
       val insertedSecond = repo.add(name, age)
-      val after = insertedSecond.flatMap(user => repo.get(user.id))
+      val after = insertedSecond
+        .flatMap(user => repo.get(user.id))
 
       before == inserted &&
         between.isEmpty &&
@@ -136,13 +153,20 @@ class SanityCheck extends Properties("sanity") {
   property("Update reverses itself") = {
     forAll {(user : User, insert: Boolean) =>
       val repo = new SimpleRepo()
-      val inserted = if(insert) repo.add(user.name, user.age) else None
+      val inserted = 
+        if(insert) repo.add(user.name, user.age) 
+        else None
 
-      val before = inserted.flatMap(user => repo.get(user.id))
-      val updated = inserted.flatMap(user => repo.update(user.copy(age = user.age + 1)))
-      val after = inserted.flatMap(user => repo.get(user.id))
-      val updated2 = after.flatMap(user => repo.update(user.copy(age = user.age - 1)))
-      val after2 = inserted.flatMap(user => repo.get(user.id))
+      val before = inserted
+        .flatMap(user => repo.get(user.id))
+      val updated = inserted
+        .flatMap(user => repo.update(user.copy(age = user.age + 1)))
+      val after = inserted
+        .flatMap(user => repo.get(user.id))
+      val updated2 = after
+        .flatMap(user => repo.update(user.copy(age = user.age - 1)))
+      val after2 = inserted
+        .flatMap(user => repo.get(user.id))
 
       insert == (before != after) &&
         updated == after &&
