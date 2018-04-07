@@ -1,27 +1,30 @@
 ---
 published: true
-title: Maintaing distibuted invariants!
+title: Strategies for testing effectfull systems
 ---
 
 The ground pillar of functional programming is the insistence on pure functions. That is, functions that has no effect outside of producing the result. Obviously the system will at some point need to execute its effects in the real world. This is handled by restricting the application code to producing datastructures that describe the computation. The actual effectful part is then delegated to a monad. It seems to be universally accepted that pure functions are a good ideal strive for. Where the confusion usually starts is then how to deal with systems that are inherently effectful (they make use of side-effects).
 
 Effectful systems are prime candidates for the use of property based testing. This involved generating random data, calling the functions with this random data and then verifying that the end result has a certain property. The below example is simple string specification taken from the scalacheck frontpage.
 
-object StringSpecification extends Properties(&quot;String&quot;) {
+```scala
+object StringSpecification extends Properties("String") {
 
-  property(&quot;startsWith&quot;) = forAll { (a: String, b: String) =&gt;
+  property("startsWith") = forAll { (a: String, b: String) =>
     (a+b).startsWith(a)
   }
 
-  property(&quot;concatenate&quot;) = forAll { (a: String, b: String) =&gt;
-    (a+b).length &gt; a.length &amp;&amp; (a+b).length &gt; b.length
+  property("concatenate") = forAll { (a: String, b: String) =>
+    (a+b).length > a.length && (a+b).length > b.length
   }
 
-  property(&quot;substring&quot;) = forAll { (a: String, b: String, c: String) =&gt;
+  property("substring") = forAll { (a: String, b: String, c: String) =>
     (a+b+c).substring(a.length, a.length+b.length) == b
   }
 
 }
+```
+
 Alright, that seems to work well for string. But how about my very large and complex system? What kind of properties should I seek to verify using this wonderful machinery?
 
 - Obvious implementation
@@ -41,6 +44,7 @@ All impure functions should have pure counterparts that witness the effects. Del
 
 The running example i will use is a simple User Repository module, with the usual CRUD operations.
 
+```scala
 case class User(uuid: UUID, name: String, age:Int)
 
 trait UserRepo {
@@ -49,6 +53,7 @@ trait UserRepo {
   def update(user: User): Option[User]
   def delete(user: User): Option[User]
 }
+```
 
 This is a trivial example, but illustrates the points nicely. Despite how simple these operations are it is still possible to fail to insert a user yet return a succesfull insert. it is also possible to insert the user using the wrong values. Such "trivial" mistakes are much more likely to happen as the systems become more complex. Looking at this interface there are a couple of tools from our toolbox above that could be useful here. Insert and delete should probably reverse each other. It also seems like updating a user and then updating the user again with the old input should return the original user.
 
