@@ -1,5 +1,6 @@
 ---
-published: false
+published: true
+title: Executing multistrategies
 ---
 Many times we find ourselves in a situation where we want to use two different at least somewhat mutually exclusive strategies. For instance I want to live a healthy life and eat right, but i also like to eat food that tastes well. Each strategy in isolation will end in torture: Never eating anything that could be considered unhealthy is very limiting. Likewise never considering the health impact of a meal will likely not end well for you either.
 
