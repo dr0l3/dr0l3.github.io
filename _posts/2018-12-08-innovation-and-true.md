@@ -1,5 +1,6 @@
 ---
-published: false
+published: true
+title: Innovation in software and product development
 ---
 Trust is a funny thing. You have it until you lose it and once it's lost its very hard to regain.
 
