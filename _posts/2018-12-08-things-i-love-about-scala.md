@@ -1,5 +1,6 @@
 ---
-published: false
+published: true
+title: Things i love about Scala
 ---
 For some reason the Scala language attracts a fair amount of criticism and controversy from within. Yes the language has its flaws, like any other language. Scala does however have a lot of very nice features. This blogpost is a homeage to some of those features and the people who implemented them.
 
