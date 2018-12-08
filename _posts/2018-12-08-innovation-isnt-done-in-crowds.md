@@ -1,5 +1,6 @@
 ---
 published: false
+title: Innovation isnt done in crowds
 ---
 Creativity and idea development has trouble in crowds. 
 
