@@ -1,8 +1,11 @@
 ---
-published: false
+published: true
 title: Why do we need that?!? in language design
 ---
-In categorical programming you often run into obscure and highly abstract features (an example would be higher kinded types) that are requested by “academic theory nutcases”. Due to the abstract nature of the features coming up with a simple use case is hard. It can thus be tempting to drop support for the feature. It doesn’t seem to be useful for everyday programming after all.
+Every single company in the world has a 10x programmer, probably many - that they are not paying a single cent. The FLOSS library developers whose libraries the company depend upon. These people are the heart and soul of the software revolution. 
+Given that these people add a massive amount of value - for free - it would seem prudent to invest a little bit in this highly valuable free resource. Make it as efficient as possible. Let’s park that thought for a little bit.
+
+In programming you often run into obscure and highly abstract features (an example would be higher kinded types) that are requested by “academic theory nutcases”. Due to the abstract nature of the features coming up with a simple use case is hard. It can thus be tempting to drop support for the feature. It doesn’t seem to be useful for everyday programming after all.
 
 What needs to be considered however is that the long term viability of a language is directly correlated with the quality of the libraries available to that language. If the language does not support features that are needed to create quality libraries then the language will suffer in the long term.
 
