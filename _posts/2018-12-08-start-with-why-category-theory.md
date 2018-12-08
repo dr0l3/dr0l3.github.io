@@ -1,6 +1,6 @@
 ---
 published: true
-title: Start with why; Category theory
+title: Category theory, Why?
 ---
 Whenever category theory is mentioned it is often surrounded with a healthy amount of skepticism. It is my theory that most of this skepticism stems from the fact that its rarely explained why one should bother with category theory. 
 
