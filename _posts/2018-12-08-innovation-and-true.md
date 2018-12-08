@@ -8,7 +8,7 @@ In terms of product development we have a couple of very sought after properties
 
 There is an all to familiar tale of small organizations who do innovative work, becomes successful, grows and in the process of growing loses the very properties that made the organization successful. This is followed by either turning into a soulsucking, profit hungering behemoth enterprise or organizational death. I think this tale is sad and unnecessary.
 
-If we accept the premise that innovation and good idea cultivation isn’t done in crowds then the obvious conclusion must be that we want small teams.
+If we accept the premise that [innovation and good idea cultivation isn’t done in crowds](https://dr0l3.github.io/innovation-isnt-done-in-crowds/) then the obvious conclusion must be that we want small teams.
 Once we accept that small teams are the ideal we must fundamentally shift our ideals from “let's make the work as parallel as we can” to “how do we make the individuals as productive as possible”
 
 Many of today's software practices are fundamentally trying to decouple teams and software as much as possible (microservices i am looking at you). It almost seems like the ideal is everyone sitting in their own room, working on their own code and talking as little as possible to the rest of the organization. Do organizations really believe that this is a fertile bed for innovation and idea cultivation?
