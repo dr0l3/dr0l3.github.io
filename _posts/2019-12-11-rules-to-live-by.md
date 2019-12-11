@@ -1,8 +1,6 @@
 ---
 published: true
 ---
-## Rules to live by
-
 I am not a fan of rules. Mostly because they tend to invite blind obedience and “I was just following the rules”. Guidelines on the other hand are wonderful. I do my best to limit the amount of actual rules in my life and constantly re-asses whether the rules I live by still apply.
 
 This blogpost is about those few rules that I have kept around and still value.
