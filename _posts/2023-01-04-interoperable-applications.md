@@ -9,7 +9,7 @@ As someone who works in web technology, I tried a variety of different solutions
 
 Then, I turned to the command line and experimented with using fzf for searching through my Dendron notes. It turned out to be a game-changer. By using the following command, I was able to set up a fuzzy search that also provided a nice preview of my notes:
 
-rg -v '(\-\-)|(^\s*$)' --line-number /home/rdp/dendron/dendron-dixa | fzf --ansi --delimiter : --preview 'batcat --color=always {1} --highlight-line {2}' --preview-window 'up,60%,border-bottom,+{2}+3/3,~3'
+```rg -v '(\-\-)|(^\s*$)' --line-number /home/rdp/dendron/dendron-dixa | fzf --ansi --delimiter : --`review 'batcat --color=always {1} --highlight-line {2}' --preview-window 'up,60%,border-bottom,+{2}+3/3,~3'```
 
 Not only did this solution work well, it also had a number of other benefits. It used zero resources when inactive, required no incremental work or upkeep, and was blazingly fast. Plus, it was easily hackable and worked just as well in other directories, making it a portable solution.
 
