@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 This blogpost has been written the good old-fashioned way :)
 
