@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 This post has been generated from notes using ChatGPT. See the outline at the bottom
 
