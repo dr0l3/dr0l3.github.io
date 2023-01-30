@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 This blogpost is an attempt to distil some of the lessons I have learned over the last couple of years.
 Mostly from going from 0.5M ARR to 15M ARR over the course of 4-5 years (5 to 70 developers).
@@ -456,5 +456,3 @@ Therefore I would suggest trying to limit the scope of what code reviews are sup
 There is almost nothing that can be done with code reviews that can't be without code reviews.
 Some of the alternatives can be automated.
 Use those.
-
-
