@@ -307,8 +307,27 @@ Now for the money part. The solutions.
 - More code -> More maintenance work (version bumps, security fixes, etc.)
     - Automate teh shit out of maintenance
 
+## Simplicity
+
+Perhaps the most important piece of advice I can give is to focus on simplicity, in everything.
+Simple things are easy to debug, extend and maintain.
+Simple things are easy to onboard into.
+It shouldn't just be the code that is simple, processes should be simple a well.
+If your deployment process is a 12 step plan then that increases the likelihood of mistakes.
+If it is just two steps (show change then approve the change) then the likelihood of mistakes goes down.
+
+Ideally it should be a goal that new engineers deploy to production on their first day.
+Obviously a day1 production deployment provides very little business value, but its a canary in the coal mine.
+If it is not possible then your processes are too complex.
+Simplify them.
+Another example is version bumping.
+Theoretically this should be as simple as updating the number, run the tests and deploy if the tests pass.
+If this is not the case then simplify the process.
+This might involve significant investments in things like developer environments and testing.
+
 ## Developer environments
 
+Lets elaborate a bit on the above.
 Make sure to invest in testing and developer environments.
 New developers has zero knowledge and zero context when they start.
 Broadly speaking they have two options
