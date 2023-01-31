@@ -142,7 +142,7 @@ Not to mention the monthly all-hands.
 Assuming 4 weeks in a month we started with `7 * 5 = 35 hours of productive time per week` or `35 * 4 = 140 hours per month`.
 
 Then we took away
-- 15 minutes daily for standup              ~ 6 hour per month + 12 hour lost on rampup time
+- 15 minutes daily for standup              ~ 6 hours per month + 12 hours lost on rampup time
 - 1 hour per week for grooming              ~ 4 hours per month + 2 hours lost on rampup time
 - 1 hour per week for planning              ~ 4 hours per month + 2 hours lost on rampup time
 - ½ hour per week for demo                  ~ 2 hours per month + 1 hour lost on rampup time
