@@ -179,6 +179,9 @@ If these other factors cost you 2 hours daily it matters a lot whether you had 7
 As an example, one place where I worked I went from 10 to 80 monthly code reviews in less than 6 months as a consequence of adding more developers.
 I also managed to clock in 117 slack notifications in a single day.
 I did not get a lot of work done that day.
+
+In conclusion: Wasted time becomes more and more costly the more you have of it. It is worse for developers because they thrive on long stretches of uninterrupted time. Some interruptions are invariant to scale and mitigation efforts others are not.
+
 Before we move to strategies for mitigating these problems we need to zoom out and understand how time and productivity works at an organizational level.
 
 # Time and organizational productivity
@@ -212,7 +215,7 @@ Obviously this is a temporary situation, the new engineers should run out of que
 However if you are doing a bad job of mitigating the effects of scaling your existing engineers will have less then 98 hours and will be hit harder by adding new engineers.
 The questions might also persist for longer thus reducing your ability to scale.
 
-So in conclusion: Interruptions related to onboarding engineers tend to hit your high performers the hardest. This means that adding new engineers can be a net negative addition in the short term. Your ability to scale is highly dependent on your ability to mitigate the effects of scaling.
+In conclusion: Interruptions related to onboarding engineers tend to hit your high performers the hardest. This means that adding new engineers can be a net negative addition in the short term. Your ability to scale is highly dependent on your ability to mitigate the effects of scaling.
 
 # The effects of scaling and time
 
