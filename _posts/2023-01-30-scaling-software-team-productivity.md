@@ -161,7 +161,7 @@ Another thing to consider is whether you really need the standup to be a meeting
 Can it be replaced by a scheduled slack message?
 
 Being smart about scheduling meetings can help a lot.
-As already mentioned each second wasted is worse than the previous one, so by spending as little as possible on things that are difficult to do without we get a bigger buffer to absorb the "other" interruptions, the effects of scaling.
+As already mentioned each second wasted is worse than the previous one, so by spending as little as possible on things that are difficult to change we get a bigger buffer to absorb the "other" interruptions, the effects of scaling.
 
 These other interruptions could be
 - Questions
