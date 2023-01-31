@@ -315,7 +315,7 @@ Simple things are easy to onboard into and understand.
 Simple things keep people happy.
 It shouldn't just be the code that is simple, processes should be simple a well.
 If your deployment process is a 12 step plan then that increases the likelihood of mistakes.
-If it is just two steps (show change then approve the change) then the likelihood of mistakes goes down.
+If it is just two steps (show change then approve change) then the likelihood of mistakes goes down.
 
 Ideally it should be a goal that new engineers deploy to production on their first day.
 Obviously a day1 production deployment provides very little business value, but its a canary in the coal mine.
