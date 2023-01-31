@@ -194,33 +194,33 @@ Some peoples time are more valuable than others.
 These effects are usually more pronounced in smaller companies.
 Say you have a company of 10 engineers.
 3 of these people are founding engineers, with the remaining 7 added over time.
-It would not be surprising if the 3 founding engineers were some very large percentage of the total output, over 50% (at 50% a high performer contributes 16%, other engineers 7%).
+It would not be surprising if the 3 founding engineers were some very large percentage of the total output, sometimes significantly over 50%. As an example, at 50% contribution from 3 high performers with a total of 10 engineers, a high performer contributes 16%, other engineers 7%.
 
 Now lets add a new engineer.
 In theory this should increase the total output by 10%.
 We had `98.5 * 10 = 985 hours per month`.
 Now we have `98.5 * 11 = 1083.5 hours per month`.
-However the new engineer is not familiar with the system and produces at a rate that is 50% of one of the founding engineers (as per the assumptions above).
+However the new engineer is not familiar with the system and produces at a rate that is 50% of one of the founding engineers (as per the example above).
 Additionally the new engineer requires a fairly big time investment in terms of onboarding.
 The new engineer needs to ask 2 questions daily.
-We gained 98.5 hours, but we lost `2 * (( 15+30 ) / 60) * 20 = 30 hours` of question answering time.
+We gained 98.5 hours, but we lost `2 * (( 15 + 30 ) / 60) * 20 = 30 hours` of question answering time.
 The new engineer also needs 2 code reviews per week.
 This comes out to `2 * ((30 + 30) / 60) * 8 = 16 hours` of code review time.
 
 These 46 hours could in principle be taken from any of the existing engineers, but in reality these tend to hit those who have stayed around for while, which incidentally is also your high performers.
-Again this is because the very same thing that makes them high performers also makes them the best qualified to answer questions and do code reviews.
+This is because the very same thing that makes them high performers also makes them the best qualified to answer questions and do code reviews.
 This means that it takes around two new engineers to completely tap the time budget of an existing engineer.
-So adding those two engineers are essentially a wash.
+Adding those two engineers are essentially a wash.
 Obviously this is a temporary situation, the new engineers should run out of questions to ask eventually and they should also become more productive.
 However if you are doing a bad job of mitigating the effects of scaling your existing engineers will have less then 98 hours and will be hit harder by adding new engineers.
 The questions might also persist for longer thus reducing your ability to scale.
 
-In conclusion: Interruptions related to onboarding engineers tend to hit your high performers the hardest. This means that adding new engineers can be a net negative addition in the short term. Your ability to scale is highly dependent on your ability to mitigate the effects of scaling.
+In conclusion: Interruptions related to onboarding engineers tend to hit your high performers the hardest. This means that adding new engineers can easily be a net negative addition in the short term and sometimes even the long term. Your ability to scale is highly dependent on your ability to mitigate the effects of scaling.
 
 # The effects of scaling and time
 
-So far we have dealt with time and seen how this relates to productivity.
-We are now going to shift gears and take a look at what scaling (or just passing time) does to a company regardless if how you handle the scaling.
+So far we have dealt with time seen from the perspective of engineers and groups of engineers.
+We are now going to take a look at what scaling (or just passing time) does to a company regardless if how you handle the scaling.
 
 Essentially the below is a list of causes and effects.
 Its not exhaustive.
@@ -228,9 +228,11 @@ The point is to show how many ways it is possible to lose time.
 I believe that the breadth of this list is one of the main reasons why scaling is so hard.
 People look at any one particular problem and declares it minor.
 Unfortunately they all eat from the same pool and each second lost is worse than the previous one.
+The lack of mitigation means that full effects of scaling are felt.
+Sometimes they combine exponentially and when the effects are finally felt it can sometimes be very difficult to recover.
 The proverbial boiling frog.
 
-The items on the list can combine together to create e.g. large amounts of bugs or very slow pipelines.
+The items on the list can combine together to create e.g. large amounts of bugs, very slow pipelines or a lot of questions.
 
 - More people -> more meetings (and more coordination in general)
 - More people -> more code
@@ -270,8 +272,8 @@ For example if the company has poor operational maturity and is reliant on singl
 
 The end result of all of this is that you start with perfect knowledge centralized in a few people and you end with very imperfect knowledge spread out over more people.
 This process is natural and to some degree neccesary, but can be either accelerated or decelerateed by the way you handle scaling.
-Spreading knowledge too fast tends to result in product quality going down.
-Spreading knowledge too slow overwhelms your high performers and causes employee churn, which also lowers product quality.
+Spreading knowledge too fast tends to result in product quality going down and velocity loss.
+Spreading knowledge too slow overwhelms your high performers and causes employee churn, which also lowers product quality and velocity.
 A balance must be strikken and being conscious of this can greatly help smoothe out the scaling journey.
 
 # Mitigating the effects of scaling
@@ -349,7 +351,7 @@ If you have great developer environments and lots of testing it is quite possibl
 ## Testing
 
 The situation repeats itself when the code is to be deployed.
-If you have a good test suite that you can trust then deploying has potential to become a simple task.
+If you have a good test suite that you trust then deploying has potential to become a simple task.
 If on the other hand "tribal knowledge" is required to know whether something is safe to put in production then new developers are once again in a situation where they can either ask or do something that is unpleasant.
 Breaking production is not fun.
 I witnessed first hand how almost a entire company got scared to deploy because several deployments had gone wrong.
@@ -358,6 +360,9 @@ This is in addition to time lost doing production firefighting and investigation
 Additionally a policy of requiring specific engineers to review code was added.
 This had the, by now, familar effect of flooring those engineers productivity.
 Since these people were the high performers this meant a significant net loss to productivity.
+
+A good thing to aim for here is to have a test suite that is so good that if it passes you are okay with deploying in a completely automated way.
+Feature flags, blue/green deployments and similar can help make this more palatable if you are behind.
 
 ## Architecture and organizational structure
 
