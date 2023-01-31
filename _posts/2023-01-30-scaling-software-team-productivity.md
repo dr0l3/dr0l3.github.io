@@ -119,6 +119,9 @@ There are two key facts to understand about time in terms of scaling software co
 The first fact is pretty obvious when you think about it.
 Removing 5 minutes from a pool of 8 hours is not a big deal (`~1%`).
 Removing 5 minutes from a pool of 1 hour is a much bigger deal (`~8%`).
+An important sidenode is that in terms of waste all time is equal.
+It doesn't matter if time is wasted waiting for slow compilation or waiting for the restroom to become available.
+Wasted time is wasted time and it all adds up.
 
 The second fact is also fairly well known, but often overlooked.
 Software engineering is a high context discipline.
