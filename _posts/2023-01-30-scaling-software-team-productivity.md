@@ -311,7 +311,8 @@ Now for the money part. The solutions.
 
 Perhaps the most important piece of advice I can give is to focus on simplicity, in everything.
 Simple things are easy to debug, extend and maintain.
-Simple things are easy to onboard into.
+Simple things are easy to onboard into and understand.
+Simple things keep people happy.
 It shouldn't just be the code that is simple, processes should be simple a well.
 If your deployment process is a 12 step plan then that increases the likelihood of mistakes.
 If it is just two steps (show change then approve the change) then the likelihood of mistakes goes down.
