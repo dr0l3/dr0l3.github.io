@@ -23,12 +23,12 @@ In terms of the numbers and facts the journey was something like this
 **Backend tech:** Scala, DynamoDB, AWS, Thrift (Finagle), Kubernetes, Redis, Pulumi for infrastructure, Twilio for telephony and SES for email, Kafka for event queue, Postgres
 
 The product itself was a SaaS product used for customer service.
-It bundled communcation from email, telephony, chat etc into a single interface.
-Customers can use the interface to write logic for how things should be routed and who should handle different requests.
+It bundles communcation from email, telephony, chat etc into a single interface.
+Customers can use the interface to write logic for how things are routed and who should handle different requests.
 The main selling points was the very integrated nature of the different channels (everything in one application) and that conversations where "pushed" to CS-reps using notifications rather than "pulled" (like in a normal email client where have an inbox to pull from).
-There is a lot more detail under the hood, and more was added as time went by but this is the gist of it.
+There is lots of extra detail under the hood, and more was added as time went by but this is the gist of it.
 
-I have listed the tech and product because these are common questions and sometimes this provides valuable information into the context.
+I have listed the tech and product here for context.
 How a company is run day to day can change a lot based on for example the distribution model.
 If you run all the software yourself then pushing updates is trivial because you are in control, but this is not true for all products.
 If on the other hand customers run software themselves and they control the updates then you have to be more careful about updates, because there might not be a rollback button.
@@ -494,4 +494,4 @@ Use those.
 
 # A note on optimization and well being
 
-Plenty of ink has 
+Plenty of ink has
