@@ -161,7 +161,7 @@ As already mentioned each second wasted is worse than the previous one, so by sp
 
 These other interruptions could be
 - Questions
-- Other meetings
+- Other meetings and coordination
 - Production incidents
 - Slow deployments/builds/tests
 - Code reviews
@@ -171,7 +171,7 @@ E.g. more code leads to slower builds/tests.
 More people leads to more questions and code reviews.
 This means that these factors can completely overwhelm a company if left unchecked, but they can also be mitigated (unlike the bi-weekly 1:1 which is invariant to both scale and mitigation efforts). If these other factors cost you 2 hours daily it matters a lot whether you had 7 hours or 5 hours of productive time when you started.
 
-As an example, one place where I worked I went from 10 to 80 monthly code reviews as a consequence of adding more developers.
+As an example, one place where I worked I went from 10 to 80 monthly code reviews in less than 6 months as a consequence of adding more developers.
 I also managed to clock in 117 slack notifications in a single day.
 I did not get a lot of work done that day.
 Before we move to strategies for mitigating these problems we need to zoom out and understand how time and productivity works at an organizational level.
@@ -262,7 +262,9 @@ For example if the company has poor operational maturity and is reliant on singl
 
 The end result of all of this is that you start with perfect knowledge centralized in a few people and you end with very imperfect knowledge spread out over more people.
 This process is natural and to some degree neccesary, but can be either accelerated or decelerateed by the way you handle scaling.
-Being conscious of this can greatly help smoothe out the scaling journey.
+Spreading knowledge too fast tends to result in product quality going down.
+Spreading knowledge too slow overwhelms your high performers and causes employee churn, which also lowers product quality.
+A balance must be strikken and being conscious of this can greatly help smoothe out the scaling journey.
 
 # Mitigating the effects of scaling
 
@@ -307,7 +309,7 @@ Now for the money part. The solutions.
 
 ## Developer environments
 
-The second key thing is to make sure to invest in testing and developer environments.
+Make sure to invest in testing and developer environments.
 New developers has zero knowledge and zero context when they start.
 Broadly speaking they have two options
 - Read/run the code/documentation and try to understand it
@@ -348,7 +350,7 @@ This can sometimes create shared resources or logic that is dependent on two ser
 Architecture and organizational structure are intimately linked. So its difficult to not talk about one without also talking about the other.
 Ideally the architecture allows for splitting the code into chunks that have as few dependencies between the chunks as possible.
 The dependencies that do exist should ideally be stable and well defined.
-If this can be achieved then it will be relatively easy to divide the developers into teams and have the work productively.
+If this can be achieved then it will be relatively easy to divide the developers into teams and have them work productively.
 
 If on the other hand you are drowning in coordination meetings then take a look at your architecture.
 Draw out the dependencies between the different parts of the system.
@@ -389,8 +391,10 @@ If the standard is automated then you can just update the code and move on.
 Building this automation is often something of an afterthought.
 Maybe the company has 20% time or something along those lines, but usually the time to automate is not prioritized.
 As is evident I think this is a mistake.
-An easy fix to the problem is to just hire people whose sole job it is to automate repetitive tasks or have the an "automation" duty similar to how on-call is shared.
-Exactly how much time should be delegated to automation will always differ as a function of scale, but at least the 10th hire should be automation. After that every 5-7 hires should be automation would be my rule of thumb.
+An easy fix to the problem is to just hire people whose sole job it is to automate repetitive tasks or have an "automation" duty similar to how on-call is shared.
+Exactly how much time should be delegated to automation will always differ as a function of scale.
+A rule of thumb is that at least the 10th hire should be automation. 
+After that every 5-7 hires should be automation.
 
 ## Standards and processes
 
@@ -418,19 +422,16 @@ Generally in startups you want to limit processes to a minimum so use these wise
 ## Documentation
 
 Documentation is a double edged sword.
-On the one hand it can be a great way to distill knowledge and make it accessible to everyone.
-On the other hand the only thing worse than no documentation is bad/incorrect documentation.
-If the documentation is not automatically kept up to date then it will be a constant source of maintenance overhead.
-That is if people actually remember to update it.
+Documentation takes time to write, unless at least as much time is saved by reading it then creating the documentation is a net loss.
+It is much better to have small amounts of impactful and always up to date documentation than large amounts of documentation whose value is questionable.
+
 Developers especially tend to be fond of putting documentation in documents that they then put in Git.
 I think this is a mistake.
 Any documentation should be put into a system where you can rate the content, assign an owner and easily provide feedback without altering the document itself (comments are not feedback).
-This way it is possible to see if the documentation actually helps and automatically force people to update the documentation when it is needed.
+It should then be possible to see what documentation is helpful and which is just noise.
+This allows for much more efficient maintenance of documentation.
 
-I have been through several iterations of people declaring some documentation system too messy to be useful followed by recreating a new mess just like it in another system.
-
-Documentation takes time to write, unless at least as much time is saved by reading it then creating the documentation is a net loss.
-It is much better to have small amounts of impactful and always up to date documentation than large amounts of documentation whose value is questionable.
+I have been through several iterations of people declaring some documentation system too messy to be useful followed by recreating a new mess just like it in another system. This wastes enourmous amounts of time.
 
 ## Other
 
