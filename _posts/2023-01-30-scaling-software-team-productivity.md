@@ -23,9 +23,9 @@ In terms of the numbers and facts the journey was something like this
 **Backend tech:** Scala, DynamoDB, AWS, Thrift (Finagle), Kubernetes, Redis, Pulumi for infrastructure, Twilio for telephony and SES for email, Kafka for event queue, Postgres
 
 The product itself was a SaaS product used for customer service.
-This means taking communication from email, telephony, chat etc. and bundle it into a single interface.
-Customers can then use the interface to write logic for how things should be routed and who should handle different requests.
-The main selling points was the very integrated nature of the different channels (everything in one application) and that conversations where "pushed" to CS-reps using notifications rather than "pulled" (like in a normal email client where with an inbox).
+It bundled communcation from email, telephony, chat etc into a single interface.
+Customers can use the interface to write logic for how things should be routed and who should handle different requests.
+The main selling points was the very integrated nature of the different channels (everything in one application) and that conversations where "pushed" to CS-reps using notifications rather than "pulled" (like in a normal email client where have an inbox to pull from).
 There is a lot more detail under the hood, and more was added as time went by but this is the gist of it.
 
 I have listed the tech and product because these are common questions and sometimes this provides valuable information into the context.
@@ -35,11 +35,10 @@ If on the other hand customers run software themselves and they control the upda
 Likewise some companies have higher bars to pass in terms of compliance and security.
 If your company is different the lessons here might apply or not.
 
-I could attempt to write this from memory and explain the problems and the solutions. However that might displease some people and I don't want that.
+Writing this as a war story might displease some people and I don't want that.
+Instead we will try to derive the problems from first principles.
 There will be some examples and anecdotes.
 If you are interested in more details then beer is your friend :)
-
-Instead of relying on stories we will try to derive the problems from first principles.
 
 This makes the post quite a lot longer, but also gives insights into the fundamental forces that control scaling journeys.
 
