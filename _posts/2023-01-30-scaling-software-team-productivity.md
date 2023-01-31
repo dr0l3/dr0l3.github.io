@@ -85,9 +85,10 @@ This translates to a happier and more productive workforce.
 Scaling is often thrown around a little bit loosely.
 "We need to scale the company".
 In my experience this vaguesness tends to cause confusion.
-Some people immediately jump on some sort of "performance train" even if that isn't what is needed.
+Some people immediately jump on some sort of "performance train" and try to optimize the software even if that isn't what is needed.
 Others see completely different problems.
-I was once part of a team named "scalability" there were about as many opinions of what we should do as there were people who knew about the team.
+I was once part of a team named "scalability",
+There were about as many opinions of what we should do as there were people who knew about the team.
 
 Normally three fundamental types of scaling is needed:
 
