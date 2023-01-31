@@ -323,6 +323,7 @@ If it is not possible then your processes are too complex.
 Simplify them.
 Another example is version bumping.
 Theoretically this should be as simple as updating the number, run the tests and deploy if the tests pass.
+If it is really that simple it can be completely automated.
 If this is not the case then simplify the process.
 This might involve significant investments in things like developer environments and testing.
 
