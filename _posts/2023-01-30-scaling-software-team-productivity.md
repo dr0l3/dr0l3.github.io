@@ -100,8 +100,10 @@ Each of these types pose very different challenges and the solutions that are ne
 It's very common for these types of scaling to happen at the same time.
 It is however not always the case and understanding what kind of scaling you are looking to do can help you make better decisions.
 
-Another important note is that both 1 and 2 tend to invite the same managerial solution: "hire more people".
+Another important note is that both 1 and 2 tend to invite the same managerial solution: Hire more people!.
 This does to some degree make 3 the quintessential scaling problem.
+We will focus on this problem in this post with informally speaking the goal of squeezing as much code out of our developers as possible :)
+
 If you can add people fast without hurting productivity then 1 and 2 will fix themselves, in theory.
 However as we will see hiring and onboarding large amounts of people is not trivial and you might want to be strategic about it.
 Reactively and naively adding people is not always a good idea, even if it seems like an obvious next step.
