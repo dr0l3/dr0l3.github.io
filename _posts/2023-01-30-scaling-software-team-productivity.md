@@ -129,6 +129,7 @@ Some things can be done before 30 minutes and some things require even more than
 I am sure a rather elaborate formula for ramp up time could be derived, but a crude 30 minutes cutoff is enough to understand the basic mechanisms.
 The point is that interruptions can be very costly.
 You are essentially taking 30 minutes plus the duration of the interruption away from the developer.
+
 A normal day will be 8 hours with a lunch break in there somewhere.
 This gives us 7 hours of productive time, this is our baseline.
 After this is where companies can either help or hurt themselves.
@@ -149,7 +150,7 @@ Then we took away
 - ½ hour biweekly for 1:1                   ~ 1 hours per month + 1 hour lost on rampup time
 - 1 hour per month for all-hands            ~ 1 hours per month + ½ hour lost on rampup time
 
-We just lost `4 + 4 + 2 + 4 + 1 + 1 + 6 = 22 hours` spent in meetings and `2+2+1+2+1+½+12 = 20½ hours` lost on rampup time.
+We just lost `4 + 4 + 2 + 4 + 1 + 1 + 6 = 22 hours` spent in meetings and `2 + 2 + 1 + 2 + 1 + ½ + 12 = 20½ hours` lost on rampup time.
 This means we are down to `140 - 22 - 20½ = 98.5 hours of productive time per month`.
 We cut off a good 25% of our baseline.
 Additionally around half of the time we lose we lose due to rampup time.
