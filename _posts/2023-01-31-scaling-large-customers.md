@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 
 In the [other blogpost](https://dr0l3.github.io/scaling-software-team-productivity/) we tackled the problem of scaling software companies by adding more people.
