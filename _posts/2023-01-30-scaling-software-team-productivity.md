@@ -173,7 +173,8 @@ These other interruptions could be
 The kicker with these additional interruptions is that they are usually driven by factors that will increase as you scale.
 E.g. more code leads to slower builds/tests.
 More people leads to more questions and code reviews.
-This means that these factors can completely overwhelm a company if left unchecked, but they can also be mitigated (unlike the bi-weekly 1:1 which is invariant to both scale and mitigation efforts). If these other factors cost you 2 hours daily it matters a lot whether you had 7 hours or 5 hours of productive time when you started.
+These factors can completely overwhelm a company if left unchecked, but they can also be mitigated (unlike the bi-weekly 1:1 which is invariant to both scale and mitigation efforts). 
+If these other factors cost you 2 hours daily it matters a lot whether you had 7 hours or 5 hours of productive time when you started.
 
 As an example, one place where I worked I went from 10 to 80 monthly code reviews in less than 6 months as a consequence of adding more developers.
 I also managed to clock in 117 slack notifications in a single day.
