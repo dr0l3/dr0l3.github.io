@@ -97,10 +97,7 @@ Normally three fundamental types of scaling is needed:
 3. Adding more developers/employees
 
 Each of these types pose very different challenges and the solutions that are needed can also be very different.
-It's very common for these types of scaling to happen at the same time.
-It is however not always the case and understanding what kind of scaling you are looking to do can help you make better decisions.
-
-Another important note is that both 1 and 2 tend to invite the same managerial solution: Hire more people!.
+It's very common for these types of scaling to happen at the same time and both 1 and 2 tend to invite the same managerial solution: Hire more people!.
 This does to some degree make 3 the quintessential scaling problem.
 We will focus on this problem in this post. 
 Informally speaking the goal will be squeezing as much code out of our developers as possible while adding more of them and keeping them happy :)
