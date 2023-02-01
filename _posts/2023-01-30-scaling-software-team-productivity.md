@@ -40,7 +40,7 @@ Writing this as a series of war stories might leak more detail than preferred by
 Instead we will try to derive the problems from first principles with the occational sprinkled anecdote.
 From the anecdotes one might get the impression that the places I worked at were a bit of a mess.
 It's important to understand that many of the problems referenced started out as complete non-problems, but only became problems as we scaled.
-Many problems are inherently easier at small scale and exponential scaling is not intuitive.
+Many things are inherently easier at small scale and exponential scaling is not intuitive so it can often times be very difficult to see them coming before its too late.
 If you are interested in more details then beer is your friend :)
 
 This makes the post quite a lot longer, but also gives insights into some of the fundamental forces that control scaling journeys.
