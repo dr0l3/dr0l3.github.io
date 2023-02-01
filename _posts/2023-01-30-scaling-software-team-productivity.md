@@ -290,7 +290,7 @@ For example if the company has poor operational maturity and is reliant on singl
 The end result of all of this is that you start with perfect knowledge centralized in a few people and you end with very imperfect knowledge spread out over more people.
 
 In conclusion:
-There are many ways to lose time. Many of the ways you lose time is in some way related to the amount of developers you have. If you onboarding developers quickly the amount of lost time can scale out of control.
+There are many ways to lose time. Many of the ways you lose time is in some way related to the amount of developers you have. If you are onboarding developers quickly the amount of lost time can scale out of control if you are not actively managing it.
 
 Additionally knowledge of the code will spread over time.
 This process is natural and to some degree neccesary, but can be either accelerated or decelerateed by the way you handle scaling.
