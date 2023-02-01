@@ -365,7 +365,7 @@ If you have great developer environments and lots of testing it is quite possibl
 
 The situation repeats itself when the code is to be deployed.
 If you have a good test suite that you trust then deploying has potential to become a simple task.
-If on the other hand "tribal knowledge" is required to know whether something is safe to put in production then new developers are once again in a situation where they can either ask or do something that is unpleasant.
+If on the other hand tribal knowledge is required to know whether something is safe to put in production then new developers are once again in a situation where they can either ask or do something that is unpleasant.
 Breaking production is not fun.
 I witnessed first hand how almost a entire company got scared to deploy because several deployments had gone wrong.
 Deployment fear was actively talked about and several people quit.
