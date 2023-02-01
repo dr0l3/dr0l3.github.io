@@ -43,7 +43,7 @@ It's important to understand that several of the problems referenced started out
 Many things are inherently easier at small scale and exponential scaling is not intuitive so it can sometimes be challenging to predict what is coming your way before its too late.
 If you are interested in more details on the anecdotes then beer is your friend :)
 
-This makes the post quite a lot longer, but also gives insights into some of the fundamental forces that control scaling journeys.
+The from first princeples apprach makes the post quite a lot longer, but also gives insights into some of the fundamental forces that control scaling journeys.
 
 # TLDR
 
