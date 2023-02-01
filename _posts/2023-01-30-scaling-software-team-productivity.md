@@ -521,7 +521,7 @@ We have now outlined quite a few initiatives to consider for making it easier to
 This generally tends to not make them first priority.
 Furthermore the list is long and if you needed to do all of them it would take quite a while.
 
-Which should you do? Assuming none of these are major pressing concerns the two questions to keep asking yourself is "How much time does it waste?" and "How does the waste scale with number of engineers?".
+Which should you do? Assuming none of these are major pressing concerns the three questions to keep asking yourself is "How much time does it waste?", "How does the waste scale with number of engineers?" and "How much of it can I mitigate?".
 
 Scaling will never be pretty.
 Startups will always have more fires than buckets of water.
