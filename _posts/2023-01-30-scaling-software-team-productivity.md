@@ -236,7 +236,7 @@ In conclusion: Interruptions related to onboarding engineers tend to hit your hi
 # The effects of scaling and time
 
 So far we have dealt with time seen from the perspective of engineers and groups of engineers.
-We are now going to take a look at what scaling (or just passing time) does to a company regardless if how you handle the scaling.
+We are now going to take a look at what scaling (or just passing time) does to a company regardless of how you handle the scaling.
 
 Essentially the below is a list of causes and effects.
 Its not exhaustive.
