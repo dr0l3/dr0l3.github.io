@@ -213,9 +213,9 @@ We had `98.5 * 10 = 985 hours per month`.
 Now we have `98.5 * 11 = 1083.5 hours per month`.
 However the new engineer is not familiar with the system and produces at a rate that is 50% of one of the founding engineers (as per the example above).
 Additionally the new engineer requires a fairly big time investment in terms of onboarding.
-The new engineer needs to ask 2 questions daily.
+The new engineer needs to ask 2 questions daily each taking around 15 minutes to respond to.
 We gained 98.5 hours, but we lost `2 * (( 15 + 30 ) / 60) * 20 = 30 hours` of question answering time.
-The new engineer also needs 2 code reviews per week.
+The new engineer also needs 2 code reviews per week each taking around 30 minutes.
 This comes out to `2 * ((30 + 30) / 60) * 8 = 16 hours` of code review time.
 
 These 46 hours could in principle be taken from any of the existing engineers, but in reality these tend to hit those who have stayed around for while, which incidentally is also your high performers.
