@@ -25,22 +25,22 @@ In terms of the numbers and facts the journey was something like this
 The product itself was a SaaS product used for customer service.
 It bundles communcation from email, telephony, chat etc into a single interface.
 Customers can use the interface to write logic for how things are routed and who should handle different requests.
-The main selling points was the very integrated nature of the different channels (everything in one application) and that conversations where "pushed" to CS-reps using notifications rather than "pulled" (like in a normal email client where have an inbox to pull from).
-There is lots of extra detail under the hood, and more was added as time went by but this is the gist of it.
+The main selling points was the very integrated nature of the different channels (everything in one application) and that conversations where "pushed" to CS-reps using notifications rather than "pulled" (like in a normal email client where there is inbox to pull from).
+Lots of extra detail under the hood, and more was added as time went by but this is the gist of it.
 
 I have listed the tech and product here for context.
 How a company is run day to day can change a lot based on for example the distribution model.
-If you run all the software yourself then pushing updates is trivial because you are in control, but this is not true for all products.
+If you run all the software yourself then pushing updates is trivial because you are in control.
 If on the other hand customers run software themselves and they control the updates then you have to be more careful about updates, because there might not be a rollback button.
+Also you are likely to be required to support a greater breadth of versions.
 Likewise some companies have higher bars to pass in terms of compliance and security.
-If your company is different the lessons here might apply or not.
+If your company is different the lessons here may or may not apply.
 
-Writing this as a war story might displease some people and I don't want that.
-Instead we will try to derive the problems from first principles.
-There will be some examples and anecdotes.
+Writing this as a series of war stories might leak more detail than preferred by some people and I don't want that.
+Instead we will try to derive the problems from first principles with the occational sprinkled anecdote.
 If you are interested in more details then beer is your friend :)
 
-This makes the post quite a lot longer, but also gives insights into the fundamental forces that control scaling journeys.
+This makes the post quite a lot longer, but also gives insights into some of the fundamental forces that control scaling journeys.
 
 # TLDR
 
@@ -67,7 +67,7 @@ Onboarding too many people too quickly can easily burn out your high performers 
 
 Furthermore it is important to understand that exponential scaling is not intuitive.
 Things that seem manageable can bubble up to become major problems very quickly.
-Oftentimes the severity of problems is evaluated based on how severe they have been the last 2-3 months.
+Oftentimes the severity of problems is evaluated based on how severe they have been in the past.
 But in exponential scaling such evaluations stop being accurate.
 Understanding what will be important in the future allows you to build the right building blocks in advance.
 Sometimes this is vastly superior to retrofitting solutions, sometimes it is not.
