@@ -277,7 +277,7 @@ All code is written by someone still with the project who can hopefully explain 
 When someone leaves you lose some of this knowledge, hopefully someone else also has the knowledge, but in reality you will always lose something.
 When you add new people you can only add people with zero knowledge and zero context.
 This means the average knowledge is going down.
-This generally leads to more mistakes and less output.
+If left alone this generally leads to more mistakes and less output.
 Another thing that often happens when you add people is that they start to change the code.
 This essentially moves knowledge from the original author to the new author.
 This transfer can be good (it spreads knowledge), but can also be harmful if organizations are reliant on people with perfect knowledge.
