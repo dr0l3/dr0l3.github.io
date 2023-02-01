@@ -102,13 +102,13 @@ This does to some degree make 3 the quintessential scaling problem.
 
 There are two aspects to software (or most activities in general)
 - Decisionmaking (deciding what to do)
-- Execution/mechanics (actually doing what we decided)
+- Execution/mechanics (doing what we decided)
 
 In software decision making is by far the most important to get right.
 It does however have an element of luck to it.
 Whether a given decision turns out to be succesful often depends on how the future pans out or other information that is not present at the time of making the decision.
 What will always work is to execute fast and see if it works.
-Luckily execution however is almost entirely skillbased it is simply optimizing how fast we do what we set out to do.
+Luckily execution is almost entirely skillbased it is simply optimizing how fast we do what we set out to do.
 Or it is optimizing how fast we get feedback on our decisions.
 
 We will focus on the software mechanics of adding additional developers in this post. Informally speaking the goal will be squeezing out as much code as possible from our developers while adding more of them and keeping them happy :)
