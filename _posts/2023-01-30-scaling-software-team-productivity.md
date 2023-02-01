@@ -113,7 +113,7 @@ Or it is optimizing how fast we get feedback on our decisions.
 
 We will focus on the software mechanics of adding additional developers in this post. Informally speaking the goal will be squeezing out as much code as possible from our developers while adding more of them and keeping them happy :)
 
-If you can add people fast without hurting productivity then 1 and 2 will fix themselves, in theory.
+If you can add people fast without hurting productivity then 1 and 2 will fix themselves, in theory (kinda :)).
 However as we will see hiring and onboarding large amounts of people is not trivial and you might want to be strategic about it.
 Reactively and naively adding people is not always a good idea, even if it seems like an obvious next step.
 And to understand why this is we need to understand time - in detail.
