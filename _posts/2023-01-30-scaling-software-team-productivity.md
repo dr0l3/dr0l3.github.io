@@ -505,6 +505,3 @@ There is almost nothing that can be done with code reviews that can't be without
 Some of the alternatives can be automated.
 Use those.
 
-# A note on optimization and well being
-
-Plenty of ink has
