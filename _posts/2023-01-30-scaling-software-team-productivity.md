@@ -229,7 +229,7 @@ Obviously this is a temporary situation, the new engineers should run out of que
 However if you are doing a bad job of mitigating the effects of scaling your existing engineers will have less then 98 hours and will be hit harder by adding new engineers.
 The questions might also persist for longer thus reducing your ability to scale.
 
-This section was quite theoretical and has some relatively arbitrary assumptions e.g. 15 minutes to answer a question. Maybe 15 minutes is excessive at 10 engineers, but the time it takes to answer a question tends to scale with the size. "Why are we doing deployments this way?" is simple to answer if your deployments are simple, but convoluted to answer if your deployments are convoluted. Even if the assumptions aren't true for your company now, they might become in the future. Exponential scaling is not intuitive!
+This section was quite theoretical and has some relatively arbitrary assumptions e.g. 15 minutes to answer a question. Maybe 15 minutes is excessive at 10 engineers, but the time it takes to answer a question tends to scale with the size of the company. "Why are we doing deployments this way?" is simple to answer if your deployments are simple, but convoluted to answer if your deployments are convoluted. Even if the assumptions aren't true for your company now, they might become in the future. Exponential scaling is not intuitive!
 
 In conclusion: Interruptions related to onboarding engineers tend to hit your high performers the hardest. This means that adding new engineers can easily be a net negative addition in the short term and sometimes even the long term. Your ability to scale is highly dependent on your ability to mitigate the effects of scaling.
 
