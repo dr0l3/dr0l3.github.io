@@ -243,7 +243,8 @@ Its not exhaustive.
 The point is to show how many ways it is possible to lose time.
 I believe that the breadth of this list is one of the main reasons why scaling is so hard.
 People look at any one particular problem and declares it minor.
-But there are no big problems, just a large list of small problems that all eat from the same pool of time and each second lost is worse than the previous one.
+And they are right there are no big problems, just a large list of small problems that all eat from the same pool of time and each second lost is worse than the previous one.
+A 5 minute interruption is no big deal, unless it ruined the only good block of time you had that week.
 The lack of mitigation means that full effects of scaling are eventually felt.
 Sometimes they combine exponentially and when the effects are finally felt it can be very difficult to recover.
 The proverbial boiling frog.
