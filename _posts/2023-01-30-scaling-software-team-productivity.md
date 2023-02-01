@@ -99,8 +99,19 @@ Normally three fundamental types of scaling is needed:
 Each of these types pose very different challenges and the solutions that are needed can also be very different.
 It's very common for these types of scaling to happen at the same time and both 1 and 2 tend to invite the same managerial solution: Hire more people!.
 This does to some degree make 3 the quintessential scaling problem.
-We will focus on this problem in this post. 
-Informally speaking the goal will be squeezing as much code out of our developers as possible while adding more of them and keeping them happy :)
+
+There are two aspects to software (or most activities in general)
+- Decisionmaking (deciding what to do)
+- Execution/mechanics (actually doing what we decided)
+
+In software decision making is by far the most important to get right.
+It does however have an element of luck to it.
+Whether a given decision turns out to be succesful often depends on how the future pans out or other information that is not present at the time of making the decision.
+What will always work is to execute fast and see if it works.
+Luckily execution however is almost entirely skillbased it is simply optimizing how fast we do what we set out to do.
+Or it is optimizing how fast we get feedback on our decisions.
+
+We will focus on the software mechanics of adding additional developers in this post. Informally speaking the goal will be squeezing out as much code as possible from our developers while adding more of them and keeping them happy :)
 
 If you can add people fast without hurting productivity then 1 and 2 will fix themselves, in theory.
 However as we will see hiring and onboarding large amounts of people is not trivial and you might want to be strategic about it.
