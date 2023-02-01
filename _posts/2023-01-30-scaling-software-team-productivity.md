@@ -514,3 +514,17 @@ Therefore I would suggest trying to limit the scope of what code reviews are sup
 There is almost nothing that can be done with code reviews that can't be without code reviews.
 Some of the alternatives can be automated.
 Use those.
+
+# Conclusion
+
+We have now outlined quite a few initiatives to consider for making it easier to onboard more engineers. Obviously completing these initiatives eat from the same timepool as feature work.
+This generally tends to not make them first priority.
+Furthermore the list is long and if you needed to do all of them it would take quite a while.
+
+Which should you do? Assuming none of these are major pressing concerns the two questions to keep asking yourself is "How much time does it waste?" and "How does the waste scale with #engineers?".
+
+Scaling will never be pretty.
+Startups will always have more fires than buckets of water.
+There will never be a convenient time to do scaling work.
+However you must learn to skate to where the puck will be, not where it currently is.
+If all you do is follow you will never lead.
