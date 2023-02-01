@@ -41,7 +41,7 @@ Instead we will try to derive the problems from first principles with the occati
 From the anecdotes one might get the impression that the places I worked at were a bit of a mess.
 It's important to understand that several of the problems referenced started out as complete non-problems, but only became problems as we scaled.
 Many things are inherently easier at small scale and exponential scaling is not intuitive so it can sometimes be challenging to predict what is coming your way before its too late.
-If you are interested in more details then beer is your friend :)
+If you are interested in more details on the anecdotes then beer is your friend :)
 
 This makes the post quite a lot longer, but also gives insights into some of the fundamental forces that control scaling journeys.
 
