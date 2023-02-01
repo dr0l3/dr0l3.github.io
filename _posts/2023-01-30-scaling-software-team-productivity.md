@@ -244,9 +244,9 @@ The point is to show how many ways it is possible to lose time.
 I believe that the breadth of this list is one of the main reasons why scaling is so hard.
 People look at any one particular problem and declares it minor.
 And they are right there are no big problems, just a large list of small problems that all eat from the same pool of time and each second lost is worse than the previous one.
-A 5 minute interruption is no big deal, unless it ruined the only good block of time you had that week.
-The lack of mitigation means the full effects of scaling are eventually felt.
-Sometimes they combine exponentially and when the effects are finally felt it can be very difficult to recover.
+A 5 minute interruption is no big deal, except it ruined the only good block of time you had that week and now you got no work done.
+Failing to manage the time waste means the full effects of scaling are eventually felt.
+Sometimes the effects combine exponentially and when the they are finally felt it can be very difficult to recover.
 The proverbial boiling frog.
 
 The items on the list can combine together to create e.g. large amounts of bugs, very slow pipelines or a lot of questions.
