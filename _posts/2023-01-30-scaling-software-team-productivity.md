@@ -243,9 +243,9 @@ Its not exhaustive.
 The point is to show how many ways it is possible to lose time.
 I believe that the breadth of this list is one of the main reasons why scaling is so hard.
 People look at any one particular problem and declares it minor.
-Unfortunately they all eat from the same pool and each second lost is worse than the previous one.
-The lack of mitigation means that full effects of scaling are felt.
-Sometimes they combine exponentially and when the effects are finally felt it can sometimes be very difficult to recover.
+But there are no big problems, just a large list of small problems that all eat from the same pool of time and each second lost is worse than the previous one.
+The lack of mitigation means that full effects of scaling are eventually felt.
+Sometimes they combine exponentially and when the effects are finally felt it can be very difficult to recover.
 The proverbial boiling frog.
 
 The items on the list can combine together to create e.g. large amounts of bugs, very slow pipelines or a lot of questions.
