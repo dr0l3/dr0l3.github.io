@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 
 In [a previous blogpost](https://dr0l3.github.io/scaling-software-team-productivity/) we tackled the problem of scaling the execution part of making software.
