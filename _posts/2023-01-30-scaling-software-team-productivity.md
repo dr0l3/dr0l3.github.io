@@ -33,7 +33,7 @@ I have listed the tech and product here for context.
 How a company is run day to day can change a lot based on for example the distribution model.
 If you run all the software yourself then pushing updates is trivial because you are in control.
 If on the other hand customers run software themselves and they control the updates then you have to be more careful about updates, because there might not be a rollback button.
-Also you are likely to be required to support a greater breadth of versions.
+You are also likely to be required to support a greater breadth of versions.
 Likewise some companies have higher bars to pass in terms of compliance and security.
 If your company is different the lessons here may or may not apply.
 
