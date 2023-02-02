@@ -29,14 +29,14 @@ Your high performers will take the brunt of the questions and problems.
 This is because the very same attributes that make them high performers also make them the best qualified to answer questions (high context and experience).
 Onboarding too many people too quickly can easily burn out your high performers and lead to high churn.
 
-Furthermore it is important to understand that exponential scaling is not intuitive.
+Exponential scaling is not intuitive.
 Things that seem manageable can bubble up to become major problems very quickly.
 Oftentimes the severity of problems is evaluated based on how severe they have been in the past.
 But in exponential scaling such evaluations stop being accurate.
 Understanding what will be important in the future allows you to build the right building blocks in advance.
 Sometimes this is vastly superior to retrofitting solutions, sometimes it is not.
 
-Lastly it is important to understand that scaling is not a one time event.
+Lastly, scaling is not a one time event.
 What works great at 5 people might be terrible at 50 people.
 What works great at 50 people might be terrible at 500 people.
 
@@ -62,7 +62,7 @@ In terms of the numbers and facts the journey was something like this
 
 **Backend tech:** Scala, DynamoDB, AWS, Thrift (Finagle), Kubernetes, Redis, Pulumi for infrastructure, Twilio for telephony and SES for email, Kafka for event queue, Postgres
 
-The product itself was a SaaS product used for customer service.
+The product itself is a SaaS product used for customer service.
 It bundles communcation from email, telephony, chat etc into a single interface.
 Customers can use the interface to write logic for how things are routed and who should handle different requests.
 The main selling points was the very integrated nature of the different channels (everything in one application) and that conversations where "pushed" to CS-reps using notifications rather than "pulled" (like in a normal email client where there is inbox to pull from).
@@ -81,6 +81,7 @@ Writing this as a series of war stories might leak more detail than preferred by
 Instead we will try to derive the problems from first principles with the occational sprinkled anecdote.
 From the anecdotes one might get the impression that the places I worked at were a bit of a mess.
 It's important to understand that several of the problems referenced started out as complete non-problems, but only became problems as we scaled.
+In an exponentially scaling context things go from nothing to everything very quickly.
 Many things are inherently easier at small scale and exponential scaling is not intuitive so it can sometimes be challenging to predict what is coming your way before its too late.
 If you are interested in more details on the anecdotes then beer is your friend :)
 
