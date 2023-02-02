@@ -366,7 +366,7 @@ If it is just two steps (show change then approve change) then the likelihood of
 Ideally it should be a goal that new engineers deploy to production on their first day.
 Obviously a day1 production deployment provides very little business value, but its a canary in the coal mine.
 If it is not possible then your processes are too complex.
-Simplify them.
+You are wasting time, simplify.
 Another example is version bumping.
 Theoretically this should be as simple as updating the number, run the tests and deploy if the tests pass.
 If it is really that simple it can be completely automated.
