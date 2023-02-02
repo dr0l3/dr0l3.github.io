@@ -51,7 +51,7 @@ The key questions to ask yourself repeatedly are
 
 It can be difficult to prioritize time for scaling work in fast moving startups.
 However you must learn to skate to where the puck will be, not where it currently is.
-The most dangerous problem you have may not be the one that is most pressing now, it will be the one that has the worst scaling properties.
+In an exponential scaling context the most dangerous problem you have may not be the one that is most pressing now, it will be the one that has the worst scaling properties.
 
 # The longer version
 
