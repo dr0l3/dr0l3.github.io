@@ -390,10 +390,10 @@ The situation repeats itself when the code is to be deployed.
 If you have a good test suite that you trust then deploying has potential to become a simple task.
 If on the other hand tribal knowledge is required to know whether something is safe to put in production then new developers are once again in a situation where they can either ask or do something that is unpleasant.
 Breaking production is not fun.
-I witnessed first hand how almost a entire company got scared to deploy because several deployments had gone wrong.
+I witnessed first hand how almost a entire company got scared to deploy because several deployments had gone wrong in a short time.
 Deployment fear was actively talked about and several people quit.
 This is in addition to time lost doing production firefighting and investigations.
-Additionally a policy of requiring specific engineers to review code was added.
+On top of this a policy of requiring specific engineers to review code was added.
 This had the, by now, familar effect of flooring those engineers productivity.
 Since these people were the high performers this meant a significant net loss to productivity.
 
