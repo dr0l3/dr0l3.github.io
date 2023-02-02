@@ -473,7 +473,7 @@ This is maybe a bit of a misnomer.
 If standards and processes could conclusively solve tech debt then we would not have tech debt :)
 
 If you are employed at a startup then some amount of tech debt is to be expected.
-When you don't have paying customers will be on getting paying customers and figuring out what they like.
+When you don't have paying customers focus will be on getting paying customers and figuring out what they like.
 Cleaning up failed experiments and impedance mismatch between implementation and design might not be first priority.
 Unless someone went back and fixed it all then there will be tech debt.
 That being said heavily accumulating tech debt is ofcourse a problem.
