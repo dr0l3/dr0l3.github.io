@@ -12,7 +12,7 @@ The TLDR is that many problems can be identified and solved by looking at how ti
 As a company scales more and more things will demand more and more time.
 Everything from more meetings to slower compile times will eat into the time available to do work.
 The key to success it to be able to identify the important value adding tasks that are essential and then optimize them heavily.
-For most software companies this would be
+For most software companies this will include
 
 1) Writing code
 
