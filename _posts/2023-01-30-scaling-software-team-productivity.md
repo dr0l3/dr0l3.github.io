@@ -257,6 +257,9 @@ Failing to manage the time waste means the full effects of scaling are eventuall
 Sometimes the effects combine exponentially and when the they are finally felt it can be very difficult to recover.
 The proverbial boiling frog.
 Fixing tech debt can be difficult, but it is significantly more difficult with 117 interruptions per day and 80 PR reviews per month.
+On top of this, everything becomes more difficult with more people.
+Everything!
+Try agreeing on date with 20 people.
 
 The items on the list can combine together to create e.g. large amounts of bugs, very slow pipelines or a lot of questions.
 
