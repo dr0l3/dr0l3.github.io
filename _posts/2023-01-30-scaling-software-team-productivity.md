@@ -128,26 +128,29 @@ And to understand why this is we need to understand time - in detail.
 
 # Time and developer productivity
 
-There are two key facts to understand about time in terms of scaling software companies.
+Two key facts about time in terms individual productivity
 1. Time becomes more valuable the less of it you have (corollary: each wasted second costs more than the previous one).
 2. Developer productivity is highly reliant on long stretches of uninterrupted time.
 
-The first fact is pretty obvious when you think about it.
+The first fact is pretty obvious from the math.
 Removing 5 minutes from a pool of 8 hours is not a big deal (`~1%`).
 Removing 5 minutes from a pool of 1 hour is a much bigger deal (`~8%`).
-An important sidenode is that in terms of waste all time is equal.
+A sidenode is that in terms of waste all time is equal.
 It doesn't matter if time is wasted waiting for slow compilation or waiting for the restroom to become available.
 Wasted time is wasted time and it all adds up.
+This is super important to internalize.
 
 The second fact is also fairly well known, but often overlooked.
 Software engineering is a high context discipline.
 There is ramp up time in order to get into flow.
 How much depends on the indivual and the task, a good rule of thumb is 30 minutes.
-In reality there isn't a magic breakpoint at 30 minutes after which you suddenly produce 100%.
+In reality there isn't a magic breakpoint at 30 minutes after which you turn on like lamp.
 Some things can be done before 30 minutes and some things require even more than 30 minutes. 
 I am sure a rather elaborate formula for ramp up time could be derived, but a crude 30 minutes cutoff is enough to understand the basic mechanisms.
 The point is that interruptions can be very costly.
 You are essentially taking 30 minutes plus the duration of the interruption away from the developer.
+The likelihood that significant rampup time is needed is a function of complexity, which tends to increase as the company scales.
+We will continually be on the lookout for this pattern of something getting worse as the company scales.
 
 A normal day will be 8 hours with a lunch break in there somewhere.
 This gives us 7 hours of productive time, this is our baseline.
