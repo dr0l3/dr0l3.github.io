@@ -44,6 +44,15 @@ What is generally needed is a transformation from a focus on individuals to a fo
 By doing this transtion at a pace that is neither too fast (adding too much process too quickly) nor too slow (too heavy a focus on individuals) it is possible to save a lot of pain and suffering.
 This translates to a happier and more productive workforce.
 
+The key questions to ask yourself repeatedly are
+- "How much time does it waste?"
+- "How does the waste scale with number of engineers?"
+- "How much of it can I mitigate?"
+
+It can be difficult to prioritize time for scaling work in fast moving startups.
+However you must learn to skate to where the puck will be, not where it currently is.
+The most dangerous problem you have may not be the one that is most pressing now, it will be the one that has the worst scaling properties.
+
 # The longer version
 
 In terms of the numbers and facts the journey was something like this
