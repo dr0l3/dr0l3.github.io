@@ -208,7 +208,7 @@ Before we move to strategies for mitigating these problems we need to zoom out a
 
 # Time and organizational productivity
 
-The key fact to understand about time and productivity at an organizational level is that producivity is usually not uniformly distributed.
+Productivity at an organizational level is usually not uniformly distributed.
 You will likely have a few high performers that are significantly more productive than more average employees.
 This is usually a function of having been around for a longer time and thus knowing the system better, but obviously skill also plays a part.
 This means that not all time is created equal.
