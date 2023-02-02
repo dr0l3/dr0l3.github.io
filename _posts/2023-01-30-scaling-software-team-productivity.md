@@ -6,6 +6,46 @@ Mostly from going from 0.5M ARR to 15M ARR over the course of 4-5 years (5 to 70
 Some of those years were exciting and some of them not so much :)
 Hopefully I can save others a bit of time and pain by sharing some of the lessons I have learned.
 
+# TLDR
+
+The TLDR is that many problems can be identified and solved by looking at how time is spent.
+As a company scales more and more things will demand more and more time.
+Everything from more meetings to slower compile times will eat into the time available to do work.
+The key to success it to be able to identify the important value adding tasks that are essential and then optimize them heavily.
+For most software companies this would be
+
+1) Writing code
+
+2) Building code
+
+3) Testing code
+
+4) Deploying code
+
+5) Operating code in production
+
+Another key lesson is that the effects of scaling do not hit uniformly.
+Your high performers will take the brunt of the questions and problems.
+This is because the very same attributes that make them high performers also make them the best qualified to answer questions (high context and experience).
+Onboarding too many people too quickly can easily burn out your high performers and lead to high churn.
+
+Furthermore it is important to understand that exponential scaling is not intuitive.
+Things that seem manageable can bubble up to become major problems very quickly.
+Oftentimes the severity of problems is evaluated based on how severe they have been in the past.
+But in exponential scaling such evaluations stop being accurate.
+Understanding what will be important in the future allows you to build the right building blocks in advance.
+Sometimes this is vastly superior to retrofitting solutions, sometimes it is not.
+
+Lastly it is important to understand that scaling is not a one time event.
+What works great at 5 people might be terrible at 50 people.
+What works great at 50 people might be terrible at 500 people.
+
+What is generally needed is a transformation from a focus on individuals to a focus on teams and processes.
+By doing this transtion at a pace that is neither too fast (adding too much process too quickly) nor too slow (too heavy a focus on individuals) it is possible to save a lot of pain and suffering.
+This translates to a happier and more productive workforce.
+
+# The longer version
+
 In terms of the numbers and facts the journey was something like this
 
 **Revenue growth:** 0.5M -> 2M -> 8M -> 13M -> 15M or something along those lines
@@ -45,44 +85,6 @@ Many things are inherently easier at small scale and exponential scaling is not 
 If you are interested in more details on the anecdotes then beer is your friend :)
 
 The from first princeples apprach makes the post quite a lot longer, but also gives insights into some of the fundamental forces that control scaling journeys.
-
-# TLDR
-
-The TLDR is that many problems can be identified and solved by looking at how time is spent.
-As a company scales more and more things will demand more and more time.
-Everything from more meetings to slower compile times will eat into the time available to do work.
-The key to success it to be able to identify the important value adding tasks that are essential and then optimize them heavily.
-For most software companies this would be
-
-1) Writing code
-
-2) Building code
-
-3) Testing code
-
-4) Deploying code
-
-5) Operating code in production
-
-Another key lesson is that the effects of scaling do not hit uniformly.
-Your high performers will take the brunt of the questions and problems.
-This is because the very same attributes that make them high performers also make them the best qualified to answer questions (high context and experience).
-Onboarding too many people too quickly can easily burn out your high performers and lead to high churn.
-
-Furthermore it is important to understand that exponential scaling is not intuitive.
-Things that seem manageable can bubble up to become major problems very quickly.
-Oftentimes the severity of problems is evaluated based on how severe they have been in the past.
-But in exponential scaling such evaluations stop being accurate.
-Understanding what will be important in the future allows you to build the right building blocks in advance.
-Sometimes this is vastly superior to retrofitting solutions, sometimes it is not.
-
-Lastly it is important to understand that scaling is not a one time event.
-What works great at 5 people might be terrible at 50 people.
-What works great at 50 people might be terrible at 500 people.
-
-What is generally needed is a transformation from a focus on individuals to a focus on teams and processes.
-By doing this transtion at a pace that is neither too fast (adding too much process too quickly) nor too slow (too heavy a focus on individuals) it is possible to save a lot of pain and suffering.
-This translates to a happier and more productive workforce.
 
 # Scaling software companies
 
