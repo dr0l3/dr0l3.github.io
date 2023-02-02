@@ -117,6 +117,7 @@ Whether a given decision turns out to be succesful often depends on how the futu
 What will always work is to execute fast and see if it works.
 Luckily execution is almost entirely skillbased it is simply optimizing how fast we do what we set out to do.
 Or it is optimizing how fast we get feedback on our decisions.
+This is super important and entirely within our control.
 
 We will focus on the software mechanics of adding additional developers in this post. Informally speaking the goal will be squeezing out as much code as possible from our developers while adding more of them and keeping them happy :)
 
