@@ -26,6 +26,7 @@ The product itself was a SaaS product used for customer service.
 It bundles communcation from email, telephony, chat etc into a single interface.
 Customers can use the interface to write logic for how things are routed and who should handle different requests.
 The main selling points was the very integrated nature of the different channels (everything in one application) and that conversations where "pushed" to CS-reps using notifications rather than "pulled" (like in a normal email client where there is inbox to pull from).
+One customer called in it "The one screen wonder".
 Lots of extra detail under the hood, and more was added as time went by but this is the gist of it.
 
 I have listed the tech and product here for context.
