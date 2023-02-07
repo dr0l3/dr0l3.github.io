@@ -531,7 +531,7 @@ Finally, code reviews can be a great tool that can solve a lot of problems like
 - etc.
 
 The problem is that when you put too much weight on code reviews then they can become a bottleneck.
-There will either be many suggestions for changes or the code review wont do its job.
+There will either be many suggestions for changes or the code review won't do its job.
 Therefore I would suggest trying to limit the scope of what code reviews are supposed to accomplish to a minimum.
 Almost everything that can be done with code reviews can be done without code reviews.
 Some of the alternatives can be automated.
