@@ -1,38 +1,28 @@
 ---
 published: true
 ---
-This blog post is an attempt to distill some of the lessons I have learned over the last couple of years.
-Mostly from going from 0.5M ARR to 15M ARR over 4-5 years (5 to 70 developers).
-Some of those years were exciting and some of them not so much :)
-Hopefully, I can save others a bit of time and pain by sharing some of the lessons I have learned.
+
+Scaling a software team is one of the most challenging and overlooked phases of a startup's journey. While the initial idea, product-market fit, and growth hacking get a lot of attention, the daily struggle of scaling often goes unnoticed. But like a training process for a sprinter, scaling requires constant refinement of skills and gradual improvement of performance. As a company grows, the demands on its development team increase, from more meetings to slower compile times to learning to operate more and more code in production. In this blog post, I'll share some hard-earned lessons from my experience scaling a software team from 5 to 70 developers, going from $0.5M ARR to $15M ARR in 4-5 years. By following these lessons, you can save yourself and your team time and pain and set yourself up for long-term success.
 
 # TLDR
 
-The TLDR is that many problems can be identified and solved by looking at how time is spent.
-As a company scales more and more things will demand more and more time.
+Many problems can be identified and solved by looking at how time is spent and how that changes as a function number of developers.
+There are only 8 hours in an average workday, where does the time go?
 Everything from more meetings to slower compile times will eat into the time available to do work.
-The key to success is to be able to identify the important value-adding tasks that are essential and then optimize them heavily.
-For most software companies this will include
-
-1) Writing code
-
-2) Building code
-
-3) Testing code
-
-4) Deploying code
-
-5) Operating code in production
+To succeed, it's important to identify the most important value-adding tasks and optimize them heavily, while minimizing time spent on other tasks.
+The most important tasks for most software companies are writing, building, testing, deploying, and operating code in production.
 
 Another key lesson is that the effects of scaling do not hit uniformly.
 Your high performers will take the brunt of the questions and problems.
-This is because the very same attributes that make them high performers also make them the best qualified to answer questions (high context and experience).
+The reason they are high performers is usually due to having context and experience.
+This makes them good at answering questions as well.
 Onboarding too many people too quickly can easily burn out your high performers and lead to high churn.
+This can be disastrous for a company's culture, morale and productivity.
 
 Exponential scaling is not intuitive.
-Things that seem manageable can bubble up to become major problems very quickly.
 Oftentimes the severity of problems is evaluated based on how severe they have been in the past.
 But in exponential scaling such evaluations stop being accurate.
+The past no longer informs the future.
 Understanding what will be important in the future allows you to build the right building blocks in advance.
 Sometimes this is vastly superior to retrofitting solutions, sometimes it is not.
 
@@ -73,7 +63,7 @@ In terms of numbers and facts, the journey was something like this
 
 The product itself is a SaaS product used for customer service.
 It bundles communication from email, telephony, chat etc into a single interface.
-Customers can use the interface to write logic for how things are routed and who should handle different requests.
+Customers can use the interface to write the logic for how things are routed and who should handle different requests.
 The main selling points were the very integrated nature of the different channels (everything in one application) and that conversations were "pushed" to CS-reps using notifications rather than "pulled" (like in a normal email client where there is an inbox to pull from).
 One customer called it "The one-screen wonder".
 Lots of extra detail under the hood, and more were added as time went by but this is the gist of it.
