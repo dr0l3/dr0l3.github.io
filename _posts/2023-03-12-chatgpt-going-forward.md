@@ -35,4 +35,4 @@ Right now this is limited by the above-mentioned engineering challenges. Executi
 - Instant inference
 - Can be run locally
 
-It is now cost-effective and simple to do this in the same sense that it is cost-effective and simple to compute PI to 10,000 decimals. What happens then?
+It is now cost-effective and simple to build elaborate prompt scaffolds in the same sense that it is cost-effective and simple to compute PI to 10,000 decimals. What happens then?
