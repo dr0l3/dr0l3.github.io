@@ -29,7 +29,7 @@ LLMs are already generating all of the individual pieces needed to assemble an a
 If you can just generate a task, then generate 10 attempts at solving the task, select the best one and then generate a new task rinse and repeat.
 This would be a kind of depth-first search of all the positivities guided by feedback from tools (like a generated test suite) and a human-researched chain of tasks.
 
-Right now this is limited by the above-mentioned engineering challenges. Executing 1,000,000 prompts in sequence would take 7.6 years given 10 seconds per prompt. Also figuring out the framework needed to sequence the prompts in the right order will probably take at least 100,000 prompts. Not to mention that it costs a fortune. But what happens when/if those problems are solved. Say we have the following things figured out
+Right now this is limited by the above-mentioned engineering challenges. Executing 1,000,000 prompts in sequence would take 7.6 years given 10 seconds per prompt. Also figuring out the framework needed to sequence the prompts in the right order will probably take at least 100,000 prompts. Not to mention that it costs a fortune. But what happens when/if those problems are solved? Say we have the following things figured out
 
 - 100K token context length
 - Instant inference
