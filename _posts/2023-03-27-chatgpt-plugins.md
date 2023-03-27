@@ -44,7 +44,7 @@ A similar thing plays out with online grocery shopping.
 For this one would need some sort of meal plan.
 I need to come up with this by myself (or take the ones provided by my grocery provider or some other third party).
 If I do it myself I need to decompose the meal plan into items and then create the shopping list.
-If I use athe grocery provider's meal plans the supply is usually rather generic.
+If I use the grocery provider's meal plans the supply is usually rather generic.
 I could hope that there is some third party meal planner that has something I like while also integrating with my preferred grocery provider.
 That could happen, but unlikely in my experience.
 Either way, I need to move my items to the grocery shopping cart and hit deliver.
