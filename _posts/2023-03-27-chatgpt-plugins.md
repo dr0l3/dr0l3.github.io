@@ -57,7 +57,8 @@ This is magic.
 
 It vastly simplifies the integration effort, both because you can write fewer integrations and probably also smaller ones.
 Wolfram-alpha gets a lot of mileage out of just a couple of endpoints.
-It also means that apps can be vastly simpler.
+It also means that apps can be vastly simpler before they are viable.
+One endpoint that does something useful is all you need and it doesn't have to be useful in and of itself, it can be the xargs of ChatGPT plugins.
 Maybe this can be a step towards bringing the Unix philosophy of doing one thing well to the web.
 A breath of fresh air compared to the bloated nature of the current web.
 Actual web3.0.
