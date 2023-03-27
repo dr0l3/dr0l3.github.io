@@ -18,7 +18,7 @@ Before ChatGPT plugins integration is point-to-point.
 Want to integrate one app into another? Write an integration in one of the apps (or both) generally using an API.
 After ChatGPT plugins integration is just writing a single ChatGPT plugin.
 It's like Linux pipes and database query planners had a lovechild that understands natural language.
-Another way of putting it is that software integration is now `O(n)` instead of `O(n)^2`.
+Another way of putting it is that software integration is now `O(n)` instead of `O(n)^2` in terms of the effort needed to build.
 This is a BIG FUCKING DEAL!
 
 For the following examples, I would ask to be cut some slack.
