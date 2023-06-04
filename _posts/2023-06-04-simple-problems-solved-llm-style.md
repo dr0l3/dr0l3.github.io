@@ -46,12 +46,11 @@ Open up Notepad and disable the backspace and arrow keys on your keyboard (or ju
 Then see if you can write out a working solution.
 Most people will be able to accomplish this task, but anything significantly more complex is monstrously difficult.
 Try something "simple" like tic-tac-toe.
+
 If you sit down ahead of time and make a battle plan then tic-tac-toe might also be doable, but again LLMs don't get to do that.
 They have to start outputting the second the assignment has been entered.
-
 You can change this by giving the LLM some slack by instructing it to "think step by step".
 This essentially allows the model a bit of paper to write a scratchpad solution before completing the actual task.
-This technique is so essential that not doing it is considered a red flag in whiteboard interviews unless you can complete the assignment with ease.
 When you think of the problem from the LLM's perspective the fact that "let's think step by step" works is obvious.
 But it took significant time before anyone discovered it.
 
