@@ -18,7 +18,7 @@ Pretty much all humans will use the same algorithm.
 
 ```
 1. multiply the two rightmost digits
-2. output the rightmost digit and remember the the carry. 
+2. output the rightmost digit and remember the carry. 
 
 Move to the next digits and rinse repeat.
 ```
