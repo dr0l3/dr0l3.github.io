@@ -60,7 +60,7 @@ When asked if the above was correct the LLM will reply with "no".
 As humans, we find such behavior odd because that isn't how humans behave.
 
 If you see the problem from the LLM's perspective the behavior is quite logical: It was given a difficult task, it failed and it was able to spot that.
-Give yourself a coding task and complete it LLM-style, then read it afterward.
+Give yourself a difficult coding task and complete it LLM-style, then read it afterward.
 
 Next time you are less than impressed by the output of an LLM try solving the problem from the LLM's perspective. 
 Sometimes this gives significant insight into ways you can reformulate the problem, like reversing the order of digits.
