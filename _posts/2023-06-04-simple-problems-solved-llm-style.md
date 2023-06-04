@@ -12,7 +12,7 @@ Let's take two examples that most humans with reasonable math and codings skills
 - Coding up fizzbuzz
 
 
-Most humans with basic math skills will have no problem adding two numbers.
+Most humans with basic math skills will have no problem multiplying two numbers.
 The numbers can be arbitrarily large.
 Pretty much all humans will use the same algorithm.
 
