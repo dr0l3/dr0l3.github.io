@@ -28,7 +28,7 @@ export default function Home() {
               Rune Dohrn
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl">
-              Hey, I&apos;m Rune! 👋 I am an engineer and founder. I love building products that people actually enjoy using. I&apos;m always thinking about how great design, technology, and product decisions combine to create better software. ✨
+              Hey, I&apos;m Rune! 👋 I am an <b>engineer</b> and <b>founder</b>. I love building products that people <b>enjoy using</b>. I&apos;m always thinking about how great <b>design</b>, <b>technology</b>, <b>product</b> and <b>business decisions</b> combine to create better outcomes.
             </p>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl">
               Let&apos;s connect! 🤝
