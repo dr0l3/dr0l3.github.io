@@ -1,5 +1,6 @@
 ---
 published: true
+title: ChatGPT going forward
 ---
 
 Many of the LLM challenges can already be solved by creatively writing prompts

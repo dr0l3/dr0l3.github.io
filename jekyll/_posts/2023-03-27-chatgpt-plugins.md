@@ -1,5 +1,6 @@
 ---
 published: true
+title: ChatGPT plugins
 ---
 
 ChatGPT is undoubtedly a revolutionary piece of technology that will transform the way we interact with computers. 
@@ -30,7 +31,7 @@ What does that look like?
 
 # A couple of motivating examples
 
-In [an earlier post](https://dr0l3.github.io/interoperable-applications/) I tackled integration woes with the example of my hairdresser's appointment booking page.
+In [an earlier post](/blog/2023-01-04-interoperable-applications) I tackled integration woes with the example of my hairdresser's appointment booking page.
 Essentially I need to log into my hairdresser's site, then open my calendar in another tab, compare the two and select a spot.
 This could be improved if my hairdresser integrated with my calendar provider.
 Then I could have both in a single view, provided I logged into my calendar provider when on my hairdresser's page.

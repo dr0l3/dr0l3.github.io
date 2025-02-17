@@ -1,5 +1,6 @@
 ---
 published: true
+title: 'Simple problems solved LLM style'
 ---
 
 LLMs are truly impressive.
