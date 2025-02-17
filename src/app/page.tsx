@@ -4,10 +4,7 @@ import { getSortedPostsData } from "@/lib/posts";
 
 export default function Home() {
   const posts = getSortedPostsData().slice(0, 5); // Get 5 most recent posts
-  const allPosts = getSortedPostsData();
 
-  // Find specific posts by their IDs
-  const findPost = (searchId: string) => allPosts.find(post => post.id === searchId);
   
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -73,7 +70,7 @@ export default function Home() {
                 I believe in building software that scales both technically and organizationally. My approach combines deep technical expertise with practical business understanding.
               </p>
               <p>
-                If you're interested in my perspective on building scalable teams, read my thoughts on{' '}
+                If you&apos;re interested in my perspective on building scalable teams, read my thoughts on{' '}
                 <Link href="/blog/2023-01-30-scaling-software-team-productivity" className="text-blue-600 dark:text-blue-400 hover:underline">
                   scaling software team productivity
                 </Link>. 
