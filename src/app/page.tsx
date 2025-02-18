@@ -1,55 +1,6 @@
-import fs from 'fs';
-import path from 'path';
 import Link from 'next/link';
 import Image from 'next/image';
-
-interface BlogPost {
-  slug: string;
-  title: string;
-  date: string;
-}
-
-function getDateFromFilename(filename: string): string {
-  const match = filename.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
-  if (match) {
-    const [, year, month, day] = match;
-    const paddedMonth = month.padStart(2, '0');
-    const paddedDay = day.padStart(2, '0');
-    return `${year}-${paddedMonth}-${paddedDay}`;
-  }
-  return '';
-}
-
-function getTitleFromFilename(filename: string): string {
-  // Remove date prefix and extension, then convert to title case
-  return filename
-    .replace(/^\d{4}-\d{2}-\d{2}-/, '')
-    .replace(/\.(mdx?|tsx)$/, '')
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-}
-
-function getBlogPosts(): BlogPost[] {
-  const postsDirectory = path.join(process.cwd(), 'src/app/blog');
-  const items = fs.readdirSync(postsDirectory, { withFileTypes: true });
-  
-  const posts = items
-    .filter(item => item.isDirectory() && /^\d{4}-\d{2}-\d{2}/.test(item.name))
-    .map(dir => {
-      const slug = dir.name;
-      const date = getDateFromFilename(slug);
-      const title = getTitleFromFilename(slug);
-      
-      return {
-        slug,
-        title,
-        date,
-      };
-    });
-
-  return posts.sort((a, b) => b.date.localeCompare(a.date));
-}
+import BlogPostList, { getBlogPosts } from '@/components/blog-post-list';
 
 export default function Home() {
   const posts = getBlogPosts();
@@ -136,22 +87,22 @@ export default function Home() {
               </p>
               <ul>
                 <li>
-                  <Link href="/blog/2023-06-04-simple-problems-solved-llm-style" className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
+                  <Link href="/blog/posts/2023-06-04-simple-problems-solved-llm-style" className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
                     Simple problems solved LLM style
                   </Link>
                   {' '}– A look at simple problems from the point of view of an LLM. Surprisingly insightful 🤖
                 </li>
                 <li>
-                  <Link href="/blog/2018-12-08-innovation-isnt-done-in-crowds" className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
+                  <Link href="/blog/posts/2018-12-08-innovation-isnt-done-in-crowds" className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
                     Innovation isn&apos;t done in crowds
                   </Link>
                   {' '}– Rather snarky, but still something I believe in. 💡
                 </li>
                 <li>
-                  <Link href="/blog/2018-12-08-start-with-why-category-theory" className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
-                    Start with why; Category theory
+                  <Link href="blog/posts/2023-01-04-madness-and-brilliance" className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
+                    Madness and brilliance
                   </Link>
-                  {' '}– Budding first principles thinking from a young engineer :) 🎯
+                  {' '}– Quantity or quality? The answer might surprise you 🎯
                 </li>
               </ul>
               <p>
@@ -171,33 +122,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-[#9A5BFF] to-pink-400 bg-clip-text text-transparent">
               Recent Blog Posts
             </h2>
-            <div className="space-y-4">
-              {recentPosts.map((post) => (
-                <Link 
-                  key={post.slug} 
-                  href={`/blog/${post.slug}`}
-                  className="group block p-7 rounded-xl border border-gray-100 dark:border-gray-800 hover:border-transparent dark:hover:border-transparent hover:bg-white dark:hover:bg-white/[0.05] hover:shadow-[0px_4px_16px_rgba(0,0,0,0.08)] dark:hover:shadow-[0px_4px_16px_rgba(0,0,0,0.4)] transition-all duration-300 relative bg-gray-50/50 dark:bg-gray-900/50"
-                >
-                  <div className="absolute right-7 top-7 text-gray-300 dark:text-gray-600 group-hover:text-[#9A5BFF] dark:group-hover:text-[#9A5BFF] transition-colors">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform -rotate-45">
-                      <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                  <div className="pr-6">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-[#9A5BFF] dark:group-hover:text-[#9A5BFF] transition-colors leading-relaxed">
-                      {post.title}
-                    </h3>
-                    <div className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-                      {new Date(post.date).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      })}
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
+            <BlogPostList posts={recentPosts} />
             <Link 
               href="/blog"
               className="inline-flex items-center gap-1 mt-8 text-sm font-medium text-[#9A5BFF] hover:text-[#8347FF] dark:text-[#9A5BFF] dark:hover:text-[#B47FFF]"

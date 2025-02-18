@@ -1,8 +1,11 @@
 ---
 published: false
+title: On Abstraction
 ---
-"Being abstract is something profoundly different from being vague … The purpose of abstraction is not to be vague, but to create a new semantic level in which one can be absolutely precise."
-	- Dijkstra
+
+> "Being abstract is something profoundly different from being vague … The purpose of abstraction is not to be vague, but to create a new semantic level in which one can be absolutely precise."
+> 
+> \- Dijkstra
 
 I like this quote. Unfortunately, I think it is only partially correct. Before I go ahead with my attempt to dismantle this quote I would like to say that the intent of this post is not to discredit or disrespect Dijkstra. He is clearly one of the greatest computer scientist ever. With him being dutch i guess he can respect my position :). The reason the above quote is only partially correct is because I believe there are two purposes of abstraction, not just one. Futhermore the two purposes are in a way each others opposite (or dual if you are so inclined). This is important because not understanding this distinction is one of the greatest obstacles to understanding the why of functional or categorical programming - in my opinion. It is also a major contributor to strategic mistakes when coding.
 
@@ -12,14 +15,13 @@ A great example of the first kind of abstraction is the Either monad. A great ex
 
 These two abstractions serve two very different functions. The Either monad is as Dijkstra so elegantly puts it about "creating a new semantic level where absolute precision is possible". Take the case of numerical division. Division by zero is undefined. Languages that choose to implement division with the following signature thus have a precision problem:
 
-``` scala
+```scala
 def divide(a: Int, b: Int): Int
 ```
 
 This signature is lying. It can't guarantee that the result is always an Int unless it wants to return INFINITY or some other value that in some way violate the properties of math. Either solves this problem by introducing the possibility of failure.
 
-
-``` scala
+```scala
 def divide(a: Int, b: Int): Either[Exception,Int]
 ```
 
@@ -27,7 +29,7 @@ Now the function is no longer lying. It either returns an exception (DivideByZer
 
 The number typeclass serves a different purpose. It is about subtracting precision, on purpose. The divide function above only works on Ints. It is too precise. It would be neat to have it work on any number. The code is practically the same for all number types anyway (at least the non-imaginary ones).
 
-``` scala
+```scala
 def divide[N :< Number](a: N, b: N): Either[Exception,N]
 ```
 
@@ -102,12 +104,14 @@ abstraction + more guarantees -> Hopefully less bugs
 
 Making things generic is subtracting structure from it, usually used to avoid repetition. So if making things more generic introduces more text than doing it the concrete way then you are making a mistake (unless it has some other benefit that is very important).
 
-All of the below methods can be used to divide two numbers, but it is clear that the very concrete one offers us the most insight into the programs behavior at runtime. In this case that it will crash. On the contrary the very concrete method is also very narrow in its possible uses. If we want to divide other numbers than 1 and 0 as well we would probably be better of using the concrete method as we wouldn’t need to create a new method for each new computation.
+All of the below methods can be used to divide two numbers, but it is clear that the very concrete one offers us the most insight into the programs behavior at runtime. In this case that it will crash. On the contrary the very concrete method is also very narrow in its possible uses. If we want to divide other numbers than 1 and 0 as well we would probably be better of using the concrete method as we wouldn't need to create a new method for each new computation.
 
+```scala
 def verygeneric[A,B,C](v1: A, v2: B, f: (A,B) => C) = f(v1,v2)
 def generic[A <: Number](v1: A, v2: A, f: (A,A) => A) = f(v1,v2)
 def concrete(v1: Int, v2: Int) = v1/v2
 def veryconcrete(1,0)=1/0
+```
 
 The bread and butter reasons for going into functional programming is to reduce the need to keep context in your head when programming and to be able to reason more accurately about the behavior of our programs before running them. It is worth it to keep this in mind when selecting a level of abstraction when programming.
 
@@ -124,3 +128,4 @@ Abstraction and use the welltrodden paths?
 ## A New Post
 
 Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
+

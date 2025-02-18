@@ -1,0 +1,45 @@
+---
+published: true
+title: Start with why; Category theory
+---
+
+## Start with why; Category theory
+
+Whenever category theory is mentioned, it is often met with skepticism. This skepticism likely comes from the fact that its practical applications are not always clear.
+
+At its core, category theory is about **transformations**—understanding what **structures** or **properties** are preserved when converting one thing into another. If we transform **A** into **B**, what characteristics of **A** can we expect **B** to retain?
+
+For example, I can represent weekdays as both a string (the weekday name) and an integer (Monday = 1, Tuesday = 2, etc.). I can also convert freely between the two representations. However, sorting introduces a discrepancy:
+
+- Sorting the strings lexicographically ("Friday" < "Monday" < "Saturday" …) yields one order.
+- Sorting the integers numerically (1 < 2 < 3 …) yields another.
+
+This demonstrates that while we can convert between representations, they may not always behave identically in all contexts.
+
+In software, we often need to both store and display data. We could use strings everywhere, but this introduces complications when handling invalid inputs (e.g., "tusday") or performing calculations. For example, computing the weekday 24 days from now is trivial with integers: `(day + 24) % 7`. This kind of operation is cumbersome with strings.
+
+A practical solution is to **convert** the string to an integer, perform the calculation, and then **convert** it back. This principle—choosing the right representation and transforming between them efficiently—is at the heart of category theory.
+
+## Choosing a Representation
+
+What makes a representation **complete** and **minimal**? We compare three possibilities: integers, strings, and booleans.
+
+### **Integers**
+Mapping weekdays to integers (Monday = 1, Tuesday = 2, etc.) allows simple calculations. Using modulo arithmetic, we can easily determine future days:
+
+```
+2 (Tuesday) + 17 % 7 = 5 (Friday)
+```
+
+This only works well if we carefully define our mapping (e.g., ensuring Monday is 1 instead of 0). If 0 were Monday, we'd need additional checks.
+
+### **Strings**
+Storing weekdays as strings is intuitive for display purposes but introduces ambiguities: What happens with "tusday" or "akjslkdj"? Additionally, arithmetic is not naturally defined for strings—"Tuesday" + 5 is meaningless.
+
+### **Pros and Cons**
+Both integers and strings can represent weekdays, but integers preserve order and arithmetic properties. Strings are better for human readability but require additional logic for validation and operations.
+
+A **minimal** representation should store just enough information to distinguish weekdays without excess complexity. Booleans are too limited (only two values), whereas integers and strings both suffice. However, enums with exactly seven values would be ideal since they are compact and maintain structure. If needed, enums can be converted into integers for ordering and calculations.
+
+By choosing the right representation, we reduce unnecessary complexity and ensure consistency in our software. This is why category theory is relevant—it helps us understand and apply structured transformations effectively.
+

@@ -7,7 +7,7 @@ The ground pillar of functional programming is the insistence on pure functions.
 
 Effectful systems are prime candidates for the use of property based testing. This involves generating random data, calling the functions with this random data and then verifying that the end result has a certain property. The below example is a simple string specification taken from the scalacheck frontpage.
 
-{% highlight scala lineos %}
+```scala
 object StringSpecification extends Properties("String") {
 
   property("startsWith") = forAll { (a: String, b: String) =>
@@ -23,7 +23,7 @@ object StringSpecification extends Properties("String") {
   }
 
 }
-{% endhighlight %}
+```
 
 Alright, that seems to work well for string. But how about my very large and complex system? What kind of properties should I seek to verify using this wonderful machinery?
 
@@ -44,7 +44,7 @@ All impure functions should have pure counterparts that witness the effects. Del
 
 The running example I will use is a simple User Repository module, with the usual CRUD operations.
 
-{% highlight scala lineos %}
+```scala
 case class User(uuid: UUID, name: String, age:Int)
 
 trait UserRepo {
@@ -53,7 +53,7 @@ trait UserRepo {
   def update(user: User): Option[User]
   def delete(user: User): Option[User]
 }
-{% endhighlight %}
+```
 
 This is a trivial example, but illustrates the points nicely. Despite how simple these operations are it is still possible to fail to insert a user yet return a succesfull insert. It is also possible to insert the user using the wrong values. Such trivial mistakes are much more likely to happen as the systems become more complex. Looking at this interface there are a couple of tools from our toolbox above that could be useful here. Insert and delete should probably reverse each other. It also seems like updating a user and then updating the user again with the old input should return the original user.
 
@@ -61,8 +61,7 @@ Get is the only pure method in the UserRepo module. It is also a witness to any 
 
 Scala is a wonderful language for implementing these kinds of testing strategies. The below is an example of the above mentioned testing strategies in use:
 
-{% highlight scala lineos %}
-
+```scala
 import java.util.UUID
 import org.scalacheck.Prop.forAll
 import org.scalacheck.ScalacheckShapeless._
@@ -175,6 +174,6 @@ class SanityCheck extends Properties("sanity") {
     }
   }
 }
-{% endhighlight %}
+```
 
 The code above will run a total of 500 testcases with all sort of random values. For this kind of simple api with simple data that might not be that big of a win. But when the api has many methods with lots of parameters and complicated intertwining logic then this kind of sweeping sanity check is a big win because it will flush out many bugs before they are allowed into the codebase. The code is not that much longer than a normal test. Its important to note that property based testing is not a competitior of normal unit tests. Instead it should be seen as a supplemnt. Another thing worth noting is how unspecific the tests are. For example in the update reverses itself property i could have tested that the age had changed, instead i settled for testing for inequality. This is a deliberate choice. The less specific your tests are, the less you need to change them as your application code matures. Not changing test is desirable because it eliminates bugs in testing code. Property based tests are more resilient to changing application code precisely because they are still useful even if they are very generic.

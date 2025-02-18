@@ -12,8 +12,29 @@ const withMDX = createMDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  /**
+   * Enable static exports for GitHub Pages
+   */
+  output: "export",
+
+  /**
+   * Set base path to your GitHub repository name
+   * Since this is username.github.io repository, we use empty string
+   */
+  basePath: "",
+
+  /**
+   * Preserve existing page extensions configuration
+   */
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+
+  /**
+   * Configure images
+   * - Disable optimization for static export
+   * - Keep remote patterns for external images
+   */
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',

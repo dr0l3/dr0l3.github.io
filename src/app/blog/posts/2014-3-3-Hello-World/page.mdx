@@ -11,17 +11,17 @@ Below is examples of hello world programs in different languages. Despite the si
 
 ### Java
 
-{% highlight java lineos %}
+```java
 public class HelloWorld {
 	public static void main(String[] args){
     	System.out.println("Hello world");
     }
 }
-{% endhighlight %}
+```
 
 ### Go
 
-{% highlight go lineos %}
+```go
 package main
 
 import "fmt"
@@ -29,29 +29,28 @@ import "fmt"
 func main() {
     fmt.Println("hello world")
 }
-
-{% endhighlight %}
+```
 
 ### Scala
 
-{% highlight scala lineos %}
+```scala
 object HelloWorld extends App {
 	println("Hello world")
 }
-{% endhighlight %}
+```
 
 ### Haskell
 
-{% highlight haskell lineos %}
+```haskell
 module Main where
 
 main :: IO ()
 main = putStrLn "Hello, World!"
-{% endhighlight %}
+```
 
 ### Purescript
 
-{% highlight purescript lineos %}
+```purescript
 module Main where
 
 import Prelude
@@ -61,12 +60,12 @@ import Control.Monad.Eff.Console (CONSOLE, log)
 main :: forall e. Eff (console :: CONSOLE | e) Unit
 main = do
   log "Hello, World!"
-{% endhighlight %}
+```
 
 ### Rust
 
-{% highlight rust lineos %}
+```rust
 fn main() {
     println!("Hello World!");
 }
-{% endhighlight %}
+```
