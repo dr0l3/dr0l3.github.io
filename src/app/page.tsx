@@ -1,9 +1,59 @@
-import Image from "next/image";
-import Link from "next/link";
-import { getSortedPostsData } from "@/lib/posts";
+import fs from 'fs';
+import path from 'path';
+import Link from 'next/link';
+import Image from 'next/image';
+
+interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+}
+
+function getDateFromFilename(filename: string): string {
+  const match = filename.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+  if (match) {
+    const [, year, month, day] = match;
+    const paddedMonth = month.padStart(2, '0');
+    const paddedDay = day.padStart(2, '0');
+    return `${year}-${paddedMonth}-${paddedDay}`;
+  }
+  return '';
+}
+
+function getTitleFromFilename(filename: string): string {
+  // Remove date prefix and extension, then convert to title case
+  return filename
+    .replace(/^\d{4}-\d{2}-\d{2}-/, '')
+    .replace(/\.(mdx?|tsx)$/, '')
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+
+function getBlogPosts(): BlogPost[] {
+  const postsDirectory = path.join(process.cwd(), 'src/app/blog');
+  const items = fs.readdirSync(postsDirectory, { withFileTypes: true });
+  
+  const posts = items
+    .filter(item => item.isDirectory() && /^\d{4}-\d{2}-\d{2}/.test(item.name))
+    .map(dir => {
+      const slug = dir.name;
+      const date = getDateFromFilename(slug);
+      const title = getTitleFromFilename(slug);
+      
+      return {
+        slug,
+        title,
+        date,
+      };
+    });
+
+  return posts.sort((a, b) => b.date.localeCompare(a.date));
+}
 
 export default function Home() {
-  const posts = getSortedPostsData().slice(0, 5); // Get 5 most recent posts
+  const posts = getBlogPosts();
+  const recentPosts = posts.slice(0, 5); // Get 5 most recent posts
 
   return (
     <div className="min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)] antialiased bg-white dark:bg-black">
@@ -51,7 +101,7 @@ export default function Home() {
                   GitHub
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/r/rune-drole-dohrn-80723b93/"
+                  href="https://www.linkedin.com/in/rune-drole-dohrn-80723b93/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
@@ -105,7 +155,7 @@ export default function Home() {
                 </li>
               </ul>
               <p>
-              I’ve been humbled by failure many times—and I’ve come to see that truly understanding the world <b>for what it is</b>, not what you want it to be, is a superpower.
+                I&apos;ve been humbled by failure many times—and I&apos;ve come to see that truly understanding the world <b>for what it is</b>, not what you want it to be, is a superpower.
               </p>
               <p>
                 Talk is cheap. Here is an example of what I can do:
@@ -122,10 +172,10 @@ export default function Home() {
               Recent Blog Posts
             </h2>
             <div className="space-y-4">
-              {posts.map(({ id, title, date }) => (
+              {recentPosts.map((post) => (
                 <Link 
-                  key={id} 
-                  href={`/blog/${id}`}
+                  key={post.slug} 
+                  href={`/blog/${post.slug}`}
                   className="group block p-7 rounded-xl border border-gray-100 dark:border-gray-800 hover:border-transparent dark:hover:border-transparent hover:bg-white dark:hover:bg-white/[0.05] hover:shadow-[0px_4px_16px_rgba(0,0,0,0.08)] dark:hover:shadow-[0px_4px_16px_rgba(0,0,0,0.4)] transition-all duration-300 relative bg-gray-50/50 dark:bg-gray-900/50"
                 >
                   <div className="absolute right-7 top-7 text-gray-300 dark:text-gray-600 group-hover:text-[#9A5BFF] dark:group-hover:text-[#9A5BFF] transition-colors">
@@ -135,10 +185,10 @@ export default function Home() {
                   </div>
                   <div className="pr-6">
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-[#9A5BFF] dark:group-hover:text-[#9A5BFF] transition-colors leading-relaxed">
-                      {title.charAt(0).toUpperCase() + title.slice(1)}
+                      {post.title}
                     </h3>
                     <div className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-                      {new Date(date).toLocaleDateString('en-US', {
+                      {new Date(post.date).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric',
