@@ -82,7 +82,7 @@ export default function Home() {
                 I believe in <b>continual learning</b>, solving the right problems at the right time, and <b>focusing on the users</b>. I love <b>first-principles thinking</b> and <b>truly understanding</b> a domain—but sometimes, the best way to learn is to throw all of that out the window and just <b>ship some software</b> 🚀
               </p>
               <p>
-                If you&apos;re curious about how I think about problem-solving and software development, here are three posts that capture my perspective: 🤔
+                If you&apos;re curious about how I think about problem-solving and software development, here are three posts that capture my perspective 🤔
               </p>
               <ul>
                 <li>
@@ -105,14 +105,14 @@ export default function Home() {
                 </li>
               </ul>
               <p>
-                If you have A LOT of time you can check out my thoughts on{' '}
-                <Link href="/blog/2023-01-30-scaling-software-team-productivity" className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
-                  scaling software team productivity
-                </Link>. 📚
-              </p>
-              <p>
               I’ve been humbled by failure many times—and I’ve come to see that truly understanding the world <b>for what it is</b>, not what you want it to be, is a superpower.
               </p>
+              <p>
+                Talk is cheap. Here is an example of what I can do:
+              </p>
+              <div style={{position: 'relative', paddingBottom: '106.29921259842519%', height: 0, margin: '0 auto', width: '50%'}}>
+                <iframe src="https://www.loom.com/embed/17b583fa11ea4e88960b2d19a7def961?sid=0d99e7bf-5d68-467c-ad85-e9caa986f066" frameBorder="0" allowFullScreen style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
+              </div>
             </div>
           </section>
 
