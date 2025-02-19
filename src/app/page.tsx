@@ -7,7 +7,7 @@ export default function Home() {
   const recentPosts = posts.slice(0, 5); // Get 5 most recent posts
 
   return (
-    <div className="min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)] antialiased bg-white dark:bg-black">
+    <div className="min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)] antialiased bg-white dark:bg-dark-spot">
       <main className="mx-auto max-w-6xl pt-8 sm:pt-16">
         {/* Profile Section */}
         <section className="flex flex-col sm:flex-row gap-8 items-center sm:items-center mb-20 max-w-4xl mx-auto">

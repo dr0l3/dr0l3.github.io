@@ -92,14 +92,14 @@ export default function LLMStyleAddition() {
 
   return (
     <div className="max-w-md mx-auto font-sans p-4">
-      <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-gray-700 backdrop-blur-sm">
+      <div className="bg-[#2B2D42] rounded-2xl p-8 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-[#4A90E2]/30 backdrop-blur-sm">
         <div className="flex justify-center items-center mb-8">
           <div className="flex items-center gap-2">
             <span className="text-2xl">👤</span>
             <button
               onClick={() => resetGame(mode === "human" ? "llm" : "human")}
               className={`w-14 h-7 rounded-full p-1 transition-all shadow-md ${
-                mode === "human" ? "bg-gradient-to-r from-blue-500 to-blue-600" : "bg-gradient-to-r from-gray-600 to-gray-700"
+                mode === "human" ? "bg-gradient-to-r from-[#4A90E2] to-[#357ABD]" : "bg-gradient-to-r from-[#3A3C5A] to-[#252739]"
               }`}
             >
               <div
@@ -113,8 +113,8 @@ export default function LLMStyleAddition() {
         </div>
 
         <div className="relative mb-8">
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent rounded-xl"></div>
-          <pre className="font-mono text-2xl whitespace-pre bg-gradient-to-b from-gray-900 to-gray-950 px-8 py-6 rounded-xl shadow-inner border border-gray-800/50 text-right">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#4A90E2]/5 to-transparent rounded-xl"></div>
+          <pre className="font-mono text-2xl whitespace-pre bg-[#1E1E2F] px-8 py-6 rounded-xl shadow-inner border border-[#3A3C5A] text-right text-white">
 {`${num1.toString().padStart(5, '0').slice(0, mode === "human" ? 4 - step : step)}[${num1.toString().padStart(5, '0')[mode === "human" ? 4 - step : step]}]${num1.toString().padStart(5, '0').slice((mode === "human" ? 4 - step : step) + 1)}
 + ${num2.toString().padStart(5, '0').slice(0, mode === "human" ? 4 - step : step)}[${num2.toString().padStart(5, '0')[mode === "human" ? 4 - step : step]}]${num2.toString().padStart(5, '0').slice((mode === "human" ? 4 - step : step) + 1)}
 ───────────────
@@ -122,11 +122,11 @@ ${mode === "human" ? partialSum.join('').padStart(7, ' ') : partialSum.join('')}
           </pre>
         </div>
 
-        <div className="h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent mb-8"></div>
+        <div className="h-px bg-gradient-to-r from-transparent via-[#4A90E2]/20 to-transparent mb-8"></div>
 
         <div className="flex flex-col items-center gap-6">
           {carries[step] > 0 && mode === "human" && (
-            <p className="text-blue-300 font-medium text-lg">
+            <p className="text-[#B0B0C3] font-medium text-lg">
               Don&apos;t forget the carry: {carries[step]}
             </p>
           )}
@@ -136,13 +136,13 @@ ${mode === "human" ? partialSum.join('').padStart(7, ' ') : partialSum.join('')}
               type="text"
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
-              className="border border-gray-700 bg-gradient-to-b from-gray-900 to-gray-950 px-4 py-3 w-24 text-center rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none text-white text-2xl font-medium shadow-inner transition-all"
+              className="border border-[#3A3C5A] bg-[#252739] px-4 py-3 w-24 text-center rounded-xl focus:ring-2 focus:ring-[#4A90E2]/50 focus:border-[#4A90E2] outline-none text-white text-2xl font-medium shadow-inner transition-all"
               maxLength={mode === "human" ? 2 : 2}
               onKeyDown={(e) => e.key === "Enter" && handleInputSubmit()}
             />
             <button
               onClick={handleInputSubmit}
-              className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl hover:from-blue-600 hover:to-blue-700 active:from-blue-700 active:to-blue-800 transform hover:-translate-y-0.5 active:translate-y-0 transition-all border border-blue-400/20"
+              className="bg-gradient-to-r from-[#4A90E2] to-[#357ABD] text-white px-8 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl hover:from-[#357ABD] hover:to-[#2A6298] active:from-[#2A6298] active:to-[#1F4A78] transform hover:-translate-y-0.5 active:translate-y-0 transition-all border border-[#4A90E2]/20"
             >
               Submit
             </button>
@@ -151,14 +151,14 @@ ${mode === "human" ? partialSum.join('').padStart(7, ' ') : partialSum.join('')}
             onClick={generateNumbers}
             className={`${
               isComplete 
-                ? "bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 active:from-green-700 active:to-green-800 border-green-400/20 animate-pulse" 
-                : "bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 active:from-gray-800 active:to-gray-900 border-gray-500/20"
+                ? "bg-gradient-to-r from-[#9A5BFF] to-[#B388FF] hover:from-[#B388FF] hover:to-[#9A5BFF] active:from-[#8A4BEF] active:to-[#7A3BDF] border-[#9A5BFF]/20 animate-pulse" 
+                : "bg-gradient-to-r from-[#3A3C5A] to-[#4A4C6A] hover:from-[#4A4C6A] hover:to-[#5A5C7A] active:from-[#2A2C4A] active:to-[#3A3C5A] border-[#3A3C5A]/20"
             } text-white px-8 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:translate-y-0 transition-all border`}
           >
             New Numbers
           </button>
           {isCorrect !== null && (
-            <p className={`${isCorrect ? "text-green-300" : "text-red-300"} font-medium text-lg`}>
+            <p className={`${isCorrect ? "text-[#B388FF]" : "text-red-300"} font-medium text-lg`}>
               {isCorrect ? "Correct!" : "Try again!"}
             </p>
           )}

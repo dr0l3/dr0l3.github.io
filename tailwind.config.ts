@@ -12,6 +12,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backgroundColor: {
+        "dark-spot": "#121212",
+      },
     },
   },
   plugins: [
