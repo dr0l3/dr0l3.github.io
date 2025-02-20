@@ -1,0 +1,153 @@
+---
+title: Structured Outputs and sampling defaults
+date: 2025-02-20
+---
+
+# **Structured Outputs and sampling defaults**
+
+I recently ran into an interesting issue with OpenAI's sampling defaults and structured outputs.
+
+## **The Task**
+
+I am trying to build an **AI browser agent** that can take **natural language test cases** and produce **test code** by executing the task in the **browser** like a human.
+We then **record the actions** and output **Playwright code** that can be used to reproduce the test without relying on the **AI Model**.
+
+At every turn, we extract the **browser state**, feed it to an **AI Model**, and ask it to make the next decision.
+The **AI Model** is not given the full HTML, but rather we extract the visible interactive elements and some other supporting information.
+The **AI Model** is also given a **screenshot** where the **interactive elements** are highlighted.
+The idea comes from [**Browser use**](https://github.com/browser-use/browser-use).
+
+The **AI Model** then responds with one of a couple of options:
+- **Click** on an element
+- **Type** some text into an input field
+- **Scroll**
+- etc.
+
+The output is forced to conform to a **JSON schema** using **structured outputs**.
+
+## **The Issue**
+
+I then gave the AI Model the task of **booking a flight to Paris** using **Google Flights**.
+
+**Google Flights** is not the most AI Model-friendly site, and the model quite often made mistakes when selecting destination airports. One mistake in particular stuck out:
+
+![Google Flights](/wat_google_flights.png)
+
+The model has just typed "**Paris**" into the **destination airport**(18) field, suggestions pop up. Obviously, the model should select one of the airports from the **suggestions box** (22-33).
+But instead, it chooses to input the text "**03/01/2025 - 03/15/2025**" into the **origin airport** field (16).
+
+[Wat?](https://www.destroyallsoftware.com/talks/wat)
+
+This is the output to be exact:
+
+```json
+{
+  "currentState": {
+    "observations": [
+      "The destination has been set to 'Paris, France'.",
+      "The departure airport is currently set to 'Billund'.",
+      "A list of airports near Paris is visible.",
+      "The departure and return date fields have not yet been filled."
+    ],
+    "uncertainties": [
+      "Exact format for the date input is not visible."
+    ],
+    "current_goal": "Input departure and return dates for the flight search.",
+    "prediction": "The dates will be input and the search will be ready to execute."
+  },
+  "action": {
+    "action": "input_text",
+    "params": {
+      "index": 16,
+      "text": "03/01/2025 - 03/15/2025"
+    }
+  }
+}
+```
+
+To be fair to the model, the **suggestion dropdown** is occluding the **departure** and **return date** inputs, but they were visible earlier.
+But why is it inputting dates into the **origin airport** field? Is it stupid? Short answer: No.
+
+I wasn't able to reproduce the error, not even by setting `n=10` to get 10 different samples.
+
+## **The Cause**
+
+The short answer is that the AI Model is not stupid. But I failed to restrict its possible actions and this meant that even unlikely actions were considered. This can be fixed by being more thoughtful with the **sampling parameters**.
+
+Let's understand what is going on in more detail.
+
+**OpenAI's sampling defaults** are the following:
+
+```
+temperature: 1  
+top_p: 1
+```
+
+### **AI Model "internals"**
+
+Let’s unpack what that really means.
+
+When the model is generating text, it does so one **token** at a time.
+**Tokens** are the model’s vocabulary.
+It doesn’t output tokens directly; it outputs **logits**.
+**Logits** are just a list of numbers, one for each token in the model’s vocabulary.
+The higher the number, the more likely the token is from the model’s perspective.
+
+You can then turn those **logits** into a **probability distribution** using the **softmax** function.
+A **probability distribution** is a fancy way of saying a list of numbers that sum to **1**.
+
+- **top_p** of **1** says that the sampling should consider **all possible tokens**, even those that make no sense.
+- **temperature** is a tuning parameter that controls how **softmax** converts logits into probabilities.
+  - A **temperature** of **1** means the **softmax** function is applied without modification, we get the AI Model's "raw predictions".
+  - Increasing the **temperature** spreads the probabilities over more tokens, making **low-probability tokens** more likely and **high-probability tokens** less likely — making the model more **random**.
+
+So, **temperature** of **1** and **top_p** of **1** means the sampling will consider **all tokens** and use the AI Model's **raw predictions**.
+
+Whether this is a good default or not depends heavily on the task.
+
+In **structured outputs**, we often face situations where **specific tokens** are **critical** and mistakes are **irrecoverable**.
+The **flight to Paris** example is a perfect illustration.
+
+The model outputs a **JSON object** with an **action type** that must be one of:
+
+- **Click**  
+- **Type**  
+- **Scroll**  
+- etc.
+
+When the model outputs the **action** field, the state might look like this:
+
+```json
+{
+    ...
+    "action": "
+```
+
+Even if the model is **99% certain** it should **click**, it might still assign some probability to other tokens. Maybe **input** is given a **0.5%** probability.
+The model is trained on text in general, not just structured outputs, so absolute certainty is **rare**.
+Given **top_p** of **1**, the model _can_ pick **input**, leading to mistakes.
+
+If the model were generating **textual descriptions** instead, it could recover, by turning 
+
+> Lets input ...
+
+into 
+
+> Let’s input the departure date, but first, let's select Paris airport.
+
+For **text generation**, these defaults work fine, as the model can adjust its path.
+But for **structured outputs**, a **bad token choice** can't always be corrected.
+Thus, restricting the **sampling decisions** is useful.
+
+- **top_p** is especially useful.  
+  - It limits the sampling to consider only the **top x%** of tokens.  
+  - A **top_p** of **0.95** ensures only the most likely tokens are chosen.
+
+For example:  
+- If one token has a **96%** probability, it will be the **only** token considered.  
+- If two tokens have **70%** and **29%** probabilities, both will be considered.
+
+## **Conclusion**
+
+In general, if you have **structured outputs** where certain tokens are **critical** and **irrecoverable**, lowering **top_p** is a good idea.
+
