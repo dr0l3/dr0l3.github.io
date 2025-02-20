@@ -149,5 +149,13 @@ For example:
 
 ## **Conclusion**
 
-In general, if you have **structured outputs** where certain tokens are **critical** and **irrecoverable**, lowering **top_p** is a good idea.
+Reducing **top_p** to **0.7** had a stabilizing effect on the agent in general.
+I am not aware of any explicit rules for setting **top_p** for structured outputs.
+But AI models are primarily trained on **turn based conversations**, which allow for a lot of recovery options.
+An Agent making use of **structured outputs** is much more vulnerable to mistakes, both because of the **critical tokens** and also because there is no human to intervene.
+
+I fully expect this to be a much smaller problem in the future.
+This is supposedly the year of agents, so lets see if this particular problem is still around in 2026.
+
+In the meantime, if you have **structured outputs** where certain tokens are **critical** and **irrecoverable**, lowering **top_p** is a good idea.
 
