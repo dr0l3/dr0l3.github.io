@@ -40,13 +40,17 @@ export default function ModalImage({ src, alt, width, height, className = '' }: 
           }}
           onClick={() => setIsOpen(false)}
         >
-          <img
+          <Image
             src={src}
             alt={alt}
+            width={1920}
+            height={1080}
             style={{
               maxWidth: '90vw',
               maxHeight: '90vh',
-              objectFit: 'contain'
+              objectFit: 'contain',
+              width: 'auto',
+              height: 'auto'
             }}
             onClick={e => e.stopPropagation()}
           />

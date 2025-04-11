@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Image from 'next/image';
 
 interface ImageModalProps {
@@ -44,10 +44,13 @@ export default function ImageModal({ isOpen, onClose, imageSrc, alt }: ImageModa
           ✕
         </button>
         <div className="relative w-full h-full">
-          <img
+          <Image
             src={imageSrc}
             alt={alt}
             className="max-w-full max-h-[90vh] object-contain"
+            width={1920}
+            height={1080}
+            style={{ width: 'auto', height: 'auto' }}
           />
         </div>
       </div>
