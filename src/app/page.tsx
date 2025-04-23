@@ -29,7 +29,7 @@ export default function Home() {
               Rune Dohrn
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl">
-              Hey, I&apos;m Rune! 👋 I am an <b>engineer</b> and <b>founder</b>. I love building products that people <b>enjoy using</b>. I&apos;m always thinking about how great <b>design</b>, <b>technology</b>, <b>product</b> and <b>business decisions</b> combine to create better outcomes.
+              Hey, I&apos;m Rune! 👋 I am an <b>engineer</b> and <b>founder</b>. I am an unapologetic <b>futurist</b> and a relentless <b>optimizer</b>. I love figuring out how the world works and how to make it better.
             </p>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl">
               Let&apos;s connect! 🤝
