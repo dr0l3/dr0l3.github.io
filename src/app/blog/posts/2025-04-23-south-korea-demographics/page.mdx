@@ -1,0 +1,67 @@
+---
+title: South Korea Demographics
+date: 2025-04-23
+---
+
+import { PopulationPyramid } from './PopulationPyramid';
+import { PopulationSimulator } from './PopulationSimulator';
+
+# South Korea Demographics
+
+South Korea is facing a particularly difficult demographic challenge. According to the World Bank, South Korea's fertility rate is 0.78 children per woman as of 2022. The rate required to keep the population stable is around 2.1. Below is the current population distribution by age groups. Hover over a group to see additional details.
+
+<PopulationPyramid />
+
+## Population Simulation
+
+Low fertility rate is a nasty problem to have. Try and explore how South Korea's population structure might evolve over time with different fertility rates. A key indicator here is the ratio of working age people to dependents (retirees and children). Retirees have been hardcoded to 70 in this simulation.
+
+Here are some experiments to play with:
+
+- Can you increase the working age ratio?
+- What is the highest working age ratio you can achieve over the next 20 years?
+- How high does the fertility rate need to be to not have population decline? What does that do to working age ratio?
+
+
+<PopulationSimulator />
+
+The above is a simplified simulation. The general principles for the simulation implementation are
+
+- Convert 5-year brackets into a per-age array, assume uniform distribution within each bracket.
+- Each age advances by one year with an age-dependent survival rate.
+- We compute annual births from women aged 20–39, treating fertilityRate as a total fertility rate (TFR) spread over that span.
+- We roll the single-year ages back into 5-year brackets for charting.
+
+
+Here is the code
+
+```tsx
+type AgeDistribution = number[]; // index = age, last index for 100+
+
+const simulateOneYear = (ageArray: AgeDistribution, fertilityRate: number): AgeDistribution => {
+  const maxAge = ageArray.length - 1;
+  const newAgeArray: number[] = Array(maxAge + 1).fill(0);
+  
+  // Age-dependent survival rates
+  const survivalRate = (age: number): number => {
+    if (age < 1) return 0.98;
+    if (age < 15) return 0.999;
+    if (age < 65) return 0.995;
+    if (age < 80) return 0.97;
+    return 0.90;
+  };
+
+  // Age each cohort
+  for (let age = maxAge; age > 0; age--) {
+    newAgeArray[age] = (ageArray[age - 1] || 0) * survivalRate(age - 1);
+  }
+
+  // Calculate births: assume half are women, fertilityRate is TFR over reproductive span (20-39)
+  const fertilePop = ageArray.slice(20, 40).reduce((sum, pop) => sum + pop / 2, 0);
+  const births = fertilePop * (fertilityRate / 20); // Distribute TFR over 20 years
+  newAgeArray[0] = births;
+
+  return newAgeArray;
+};
+```
+

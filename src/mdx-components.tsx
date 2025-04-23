@@ -1,4 +1,3 @@
-
 import type { MDXComponents } from 'mdx/types';
 import Example from '@/components/example';
 import Image from 'next/image';
@@ -51,6 +50,23 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </td>
     ),
+    pre: ({ children, ...props }) => (
+      <pre className="relative overflow-x-auto p-4 bg-gray-900 rounded-lg my-4" {...props}>
+        {children}
+      </pre>
+    ),
+    code: ({ children, className, ...props }) => {
+      const hasLang = /language-[a-z]{1,}/.test(className || '');
+      return hasLang ? (
+        <code className={className} {...props}>
+          {children}
+        </code>
+      ) : (
+        <code className="bg-gray-200 dark:bg-gray-800 rounded px-1 py-0.5" {...props}>
+          {children}
+        </code>
+      );
+    },
     Example,
     img: (props) => (
       <Image

@@ -2,11 +2,16 @@ import createMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
+import rehypePrettyCode from 'rehype-pretty-code'
+
+const prettyCodeOptions = {
+  theme: 'github-dark'
+}
 
 const withMDX = createMDX({
   options: {
     remarkPlugins: [remarkGfm, remarkFrontmatter, [remarkMdxFrontmatter, { name: 'metadata' }]],
-    rehypePlugins: [],
+    rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]],
   },
 })
 
