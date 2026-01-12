@@ -1,0 +1,108 @@
+---
+title: The learning rate problem
+date: 2026-01-08
+---
+
+# The learning rate problem
+
+In the [previous post](/blog/posts/2026-01-07-weight-education), I translated school into the domain of weightlifting.
+
+The point wasn’t that learning is literally like lifting a barbell. It was that weightlifting makes certain dynamics painfully easy to see: if you increase difficulty on a schedule for a whole cohort, and you *don’t* calibrate it per person, predictable failure modes fall out.
+
+This post is about the bottleneck hiding inside that observation: learning rate.
+
+## What I mean by “learning rate”
+
+In weightlifting, “learning rate” is almost embarrassingly observable. You watch the lift. The bar moves or it doesn’t. The numbers go up or they don’t.
+
+In school, I’m using “learning rate” to mean something like:
+
+> How quickly a specific student turns effort into mastery on a specific topic, under a specific form of instruction.
+
+That’s not a trait of the student alone. It’s a property of the *interaction* between student, task, and teaching approach. Change the explanation, the practice format, the feedback, or the prerequisites and the rate can change dramatically.
+
+## Why the factory model makes learning rate calibration central
+
+Any educational system needs a reliable way to keep each student near the edge of what they can currently do.
+
+That is exactly what calibration is:
+
+- if the work is consistently too hard, students accumulate failure and often become averse to the activity
+- if the work is consistently too easy, students get bored, disengage, and often start pushing against the authority enforcing the pace
+
+In a factory-paced school, the calendar keeps moving. Material stacks on top of prerequisites. Difficulty escalates because the cohort moves on. So the system silently demands that someone is continuously estimating learning rate and adjusting accordingly.
+
+In theory, that someone is the teacher.
+
+## Why this becomes intractable in a physical classroom
+
+A teacher teaching multiple classes might be responsible for 60–100 students.
+
+Even if we ignore everything else teachers do (classroom management, planning, grading, admin work, meetings), just the calibration problem is huge:
+
+- the signal is noisy (wrong answers don’t tell you *why*)
+- the task is multi-step (a mistake could be attention, reading, a missing prerequisite, a misconception, or a dozen other things)
+- the observation rate is low (you can’t watch everyone think at the same time)
+- the action space is large (what intervention would actually fix *this* bottleneck for *this* student?)
+
+Exceptional teachers can do a lot here. But it’s hard to build a system that depends on everyone being exceptional, every day, for every student, across every topic.
+
+So I think the uncomfortable conclusion is: **continuous per-student calibration at classroom scale is not a problem the physical classroom solves cheaply.**
+
+You can brute-force it with staffing. If you want something close to “a coach per lifter,” you need far more adult attention per student than we currently pay for. You can debate the exact ratio needed, but the shape of the constraint feels obvious.
+
+## Why I think the solution has to be instrumented
+
+It is very convenient for someone building digital education to claim that digital education is required.
+
+So let me state it more narrowly: if your goal is **continuous, per-student calibration** on complex topics, you need a lot more observations than a teacher can reliably gather by walking around a room.
+
+The only way I can see to get those observations without putting a human observer next to every student is to move the learning workstream into an environment that is observable and instrumentable.
+
+That doesn’t mean “surveil everything a child does.” It means: when the student is *doing learning work*, the system should be able to see enough of the process to answer basic questions:
+
+- where did they start to struggle?
+- what did they try next?
+- what misconception best explains the errors?
+- what kind of hint would likely help?
+- are they improving, stalling, or regressing?
+
+Given process-level data like that, it becomes plausible to estimate learning rate per topic and surface it to the teacher in a way that’s actually usable.
+
+## Diagnosis is only half the battle
+
+Even if you could measure learning rate well, deciding what to do with it is non-trivial.
+
+In the ideal case, you could surface something concrete:
+
+> Paul keeps getting equilibrium pH problems “wrong.” He builds the ICE table correctly and writes the right expression (e.g. `Ka = x^2/(C - x)`), but then his algebra breaks when he has to solve for `x` (often a quadratic).
+
+Then the teacher (or a tutor) can intervene with targeted instruction, targeted practice, and targeted feedback.
+
+But the deeper question remains: what does a cohort-paced system do when learning rates diverge?
+
+Some combination of these has to be true:
+
+- students get different practice while staying in the same classroom
+- some students move faster
+- some students get more time
+- the “curriculum” becomes less like a single track and more like a set of dependencies
+
+I’m not going to pretend I know how to solve this. I mostly want to name the constraint: once you can see learning rates clearly, the mismatch between “one pace” and “many rates” becomes impossible to ignore.
+
+## Why this pushes me toward a browser
+
+If you try to build “digital calibration” as a single app, you immediately run into a practical problem: learning doesn’t happen inside one app.
+
+Students read on the web. They watch videos. They do exercises in different tools. They write in different editors. They research. They switch contexts constantly. The moment the learning activity moves outside your app, the signal disappears and the teacher is back to guessing.
+
+So if the goal is an instrumented learning environment that works across content types and tools, you need a substrate that is broad enough to contain real learning.
+
+That leaves two obvious places:
+
+- the operating system
+- the browser
+
+An OS-level approach feels heavy and unrealistic. A browser is already where a huge amount of learning happens, and it’s cross-platform enough to be practical.
+
+Which is why I keep coming back to the idea of an educational browser: not as “yet another app,” but as a *digital classroom*—a bounded environment where learning can happen with the same kind of insulation and structure that the physical classroom provides, while also generating the process-level signals needed for proper differentiation.
