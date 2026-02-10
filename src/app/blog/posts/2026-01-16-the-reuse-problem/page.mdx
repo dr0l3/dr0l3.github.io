@@ -1,0 +1,175 @@
+---
+title: The reuse problem
+---
+
+# The reuse problem
+
+<SeriesBlock current="2026-01-16-the-reuse-problem" />
+
+In the last posts I’ve been circling the same constraint from different angles.
+
+- If the “weight” is wrong, students drift. ([The attention and motivation problem](/blog/posts/2026-01-10-the-attention-problem).)
+- If difficulty ramps on a schedule for a whole cohort, calibration breaks. ([Education as weightlifting](/blog/posts/2026-01-07-weight-education).)
+- If you take calibration seriously, you immediately hit a measurement and time bottleneck. ([The learning rate problem](/blog/posts/2026-01-08-the-learning-rate-problem).)
+
+This post is about the piece that makes the bottleneck feel *permanent* in today’s system: **we don’t reuse teaching solutions at scale**, so we don’t compound.
+
+## The physics: three minutes per student
+
+Take a simple, generous model.
+
+- A class has 20 students.
+- You have 60 minutes.
+
+That’s **three minutes per student** if you could spend the whole hour on one-on-one calibration.
+
+But you can’t. You’re also teaching the whole group, keeping the room stable, handling transitions, answering questions, redirecting attention, dealing with devices, checking understanding, and doing a hundred small things that keep learning from collapsing.
+
+So the “three minutes” is already best case.
+
+And what are we implicitly asking a teacher to do in that time?
+
+- **Diagnose**: Is the student stuck because the work is too hard, too easy, unclear, unread, boring, socially risky, missing prerequisites, or built on a misconception?
+- **Choose an intervention**: What should happen *next* for this student, *right now*?
+- **Verify**: Did it work, or did we just produce compliance?
+
+If you believe calibration is central, this is the brutal reality: **the job is intractable unless the system does more of the work.**
+
+## Teachers build a “drawer” (and then guard it)
+
+There’s a pattern I keep noticing in how teachers talk about their practice.
+
+In the beginning, you don’t have much. You’re building what I used to call the *drawer*: lesson plans, exercises, explanations that work, routines that keep the room functioning, and all the little interventions you can reach for when students get stuck.
+
+That drawer takes years to build.
+
+And because building it is hard, most of the improvements are local:
+
+- you tweak an exercise after a bad lesson
+- you rewrite an explanation after a confused class
+- you learn, slowly, what tends to work for which students
+
+But the loop is too small. You might run the same lesson a handful of times per year. Maybe you share it with a colleague. Maybe not.
+
+Which means we’ve designed a system where **thousands of teachers teach the same topics to the same age groups—and mostly improve in isolation.** Many of them largely duplicating each others work.
+
+## Software got good by compounding reuse
+
+I come from software engineering, and it’s hard not to see the contrast.
+
+Software didn’t improve mainly because programmers became morally better people. It improved because we built a culture and infrastructure where reuse is the default:
+
+- you assume someone has solved parts of your problem before
+- you search for the best existing solution
+- you integrate it, rather than rebuilding it
+- and over time, those shared solutions get sharpened by thousands of real uses
+
+The mechanism is not mysterious. It’s just compounding.
+
+And importantly, trust is practical. When engineers choose a library, they rarely read all the code. They use proxy signals:
+
+- is it widely used?
+- who is using it?
+- is it actively maintained?
+- does it have good docs and clear examples?
+
+Those signals work because the ecosystem is built around the idea that a small number of shared components can serve a huge number of people.
+
+## The reuse question in education
+
+So here’s the uncomfortable question:
+
+**Why is it normal that every teacher has to build their own drawer, from scratch, for problems that are extremely common?**
+
+I don’t mean “a national curriculum” or “a single approved textbook.” Autonomy matters, and the goal isn’t to standardize teaching into one style.
+
+I mean something narrower:
+
+> If 10,000 teachers teach the same topic this year, why don’t we get 10,000× better materials out the other end?
+
+Right now we mostly don’t. We get 10,000 parallel attempts, and the improvements largely disappear into individual classrooms. The system of education is not compounding.
+
+## What does “reuse” actually mean here?
+
+Reuse in education shouldn’t be “download a PDF and hope.”
+
+If it’s going to help with the three-minute constraint, it has to be closer to a *toolbox of interventions* that gets better through use.
+
+In practice, that means something like:
+
+- **Small, composable units**: explanations, exercises, scaffolds, hints, examples, checks for understanding, “if they make this mistake, do this next.”
+- **Clear entry conditions**: what misconception or prerequisite gap is this targeting?
+- **Observable outcomes**: what should change if it worked?
+- **Iteration**: a way for teachers (and researchers) to improve the unit over time without rewriting the whole curriculum.
+- **Trust signals**: “used by many,” “works for these contexts,” “maintained by these people.”
+
+That last one matters more than it sounds. Reuse doesn’t scale unless teachers can quickly answer: *should I trust this?*
+
+## Not everyone has to contribute
+
+In software, most people don’t write widely reused libraries.
+
+A small fraction builds shared components; the majority reuse them. That’s fine. The ecosystem still compounds because the shared components become leverage for everyone else.
+
+Education can work the same way:
+
+- most teachers should be able to **teach well without becoming content authors**
+- a smaller group will naturally become **high-leverage contributors**
+- schools (and companies) can become **maintainers**, not just consumers
+
+## Incentives exist (we just don’t capture them)
+
+“Why would anyone contribute?” is a natural first objection.
+
+In software, the answer is often status and career leverage: authorship is a signal of competence. Companies contribute because it helps hiring and reputation.
+
+Education has analogues:
+
+- a teacher who authors a widely used module has real professional reputation
+- a school that maintains high-quality open materials signals seriousness and attracts talent
+- networks of teachers can share maintenance work instead of each rebuilding the same thing alone
+
+The problem is not that incentives are impossible. The problem is that we haven’t built the rails that let contribution turn into compounding reuse.
+
+We are lacking what GitHub and package managers like npm has done for software.
+
+## The missing ingredient: a feedback loop
+
+There’s one more problem hiding under all of this.
+
+For reuse to work, we need to know whether something *actually helped*—and for whom.
+
+In the [learning rate post](/blog/posts/2026-01-08-the-learning-rate-problem), I argued that continuous calibration likely requires an instrumented environment, because you need more observations than a teacher can get by walking around the room.
+
+Reuse has the same requirement.
+
+If a lesson unit is going to improve over time, you want a feedback loop that can answer:
+
+- where do students reliably get stuck?
+- what mistakes cluster together (hinting at a specific misconception)?
+- which scaffolds reduce time-to-mastery for which students?
+- does this intervention improve learning, or just reduce visible struggle?
+
+Without some instrumentation, “iteration” becomes vibes and anecdotes.
+
+With instrumentation, iteration can become closer to engineering: not perfect, not purely quantitative, but anchored in real usage data and real learning outcomes.
+
+## What would a compounding classroom feel like?
+
+If we ever want “three minutes per student” to be enough, the teacher needs leverage.
+
+My current picture is simple:
+
+- the classroom runs inside a bounded digital environment (a browser is the obvious substrate)
+- teaching units live in a shared library that teachers can pull from, adapt, and improve
+- the system captures the minimal signals needed to see where students struggle and what helped
+- over time, the best interventions get better, and the average teacher starts with a much stronger drawer than today
+
+That’s what I mean by the reuse problem.
+
+Right now, teaching knowledge is often trapped inside individual heads and individual folders.
+After 30 years, a teacher retires—and much of that accumulated craft evaporates.
+
+In software, work sticks around. It keeps serving people. It keeps getting improved.
+
+If education is going to become a system that compounds, we need the same property: **the ability to preserve and reuse what works, at scale, and to keep making it better.**

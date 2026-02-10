@@ -1,11 +1,13 @@
 import type { MDXComponents } from 'mdx/types';
 import Example from '@/components/example';
+import SeriesBlock from '@/components/SeriesBlock';
 import Image from 'next/image';
 import Link from 'next/link';
 
 // This file is required to use MDX in `app` directory
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
+    SeriesBlock,
     h1: ({ children }) => (
       <h1 className="text-4xl font-bold mb-4 text-blue-500">{children}</h1>
     ),
