@@ -1,0 +1,54 @@
+---
+title: The prediction economy
+published: true
+---
+
+# The prediction economy
+
+This isn't about prediction markets—Kalshi and that world. Those will keep growing, but I think they're a tiny fraction of what a prediction economy actually looks like at scale.
+
+The last fifteen years or so have been dominated by the attention economy: an escalating competition for people's attention and increasingly sophisticated ways of monetizing it. Social media, MarTech, Salesforce, YouTube—that's been a lot of the story. What's coming next is different in kind, not just degree. We're moving from "capture attention" to "predict outcomes," and I think this shift will be at least as large as the one that came before it.
+
+## What makes prediction economies possible
+
+To predict something, you need two ingredients: data about the current and historical state of the thing, and an algorithm that can compute what happens next.
+
+The algorithm side has been improving steadily for a long time. But it doesn't matter how good your model is if you can't get the data into a shape it can work with. And that's where the real bottleneck has been.
+
+What LLMs change—and this is easy to underestimate—is that they function as a universal parser. They can take messy, unstructured data in almost any form and extract signal from it. That dramatically expands the scope of things you can do prediction on, because it removes the data-wrangling step that used to make most prediction problems economically infeasible.
+
+## What this looks like in education
+
+Take a concrete example. In education, the data you'd want for prediction is learning journeys: what tasks a student attempted, in what order, how they performed, whether they improved. Measurements can be explicit (test scores) or implicit (watching a session and seeing a student go from confused to fluent).
+
+Without AI, harvesting this data at the resolution you'd need for useful prediction is functionally impossible. The signal is buried in unstructured sessions, and the cost of extracting it manually is prohibitive. With AI, it becomes close to trivial—not free, but easy enough that something previously impossible becomes possible.
+
+The prediction you can then make: if I give *this* lesson to *this* student, how much will they learn? And if I give them a different lesson instead, how does that change? That's not a minor optimization. That's an entirely different way of operating an education system.
+
+## The prerequisite is sensors
+
+If you buy that prediction economies are real, the immediate next question is: what's standing in the way?
+
+The most important prerequisite is data availability. And data availability is a function of sensors—how many you can deploy, how fast, and at what cost.
+
+In education, the sensor is relatively simple. It's a browser. A browser can record student interactions at whatever resolution you decide is reasonable given privacy constraints. Where exactly we land on those constraints is still being figured out, but the sensor itself is cheap and already everywhere.
+
+In other domains, the sensor problem is harder. Farming is an interesting case—sensors for weather, soil quality, crop health have been getting deployed for decades now, and that process is still ongoing. It's possible that some of this gets leapfrogged by environments where sensors are easier to install—vertical farming, for instance, where you control the entire physical space. And some sensors might turn out to be AI-based: just cameras, with the parsing done in software.
+
+## The remarkable part
+
+There's something here that's easy to gloss over and probably deserves more attention.
+
+The AIs aren't just sensors. They're also the predictors. LLMs are trained literally on predicting the next token in a sequence, which makes them prediction machines by default—ones that can be fit to arbitrary data and make arbitrary predictions. The same architecture that parses your unstructured data can also be the thing that computes on it.
+
+That means a single class of algorithm is removing large chunks of complexity from *both* of the things that used to stand in the way of prediction economies: parsing the data, and coming up with the right model. These used to be separate, hard problems that each required specialized expertise. Now the same process handles both, trained end-to-end.
+
+At some point this will probably specialize—domain-specific models, fine-tuned pipelines, that sort of thing. But the fact that one general-purpose algorithm does well enough across such a wide range of problems to unlock all of this is, in some sense, a remarkable human achievement. As a scientific achievement this is up there with gravity and splitting the atom.
+
+## A lot of canvas left
+
+Even if you believe the prediction economy will be enormous over the next two decades—and I do—that still leaves a vast amount of open questions about how it plays out. Which domains get there first? Where do the benefits accrue? Which sensor deployments prove economically viable and which don't?
+
+I don't have solid answers to most of these. What I do think is that the attention economy was a large shock to the established order—it rearranged media, advertising, politics, and how people spend their time. The prediction economy will be a much bigger shock. It touches more of the physical world and it affects more industries.
+
+And if I had to guess where to watch, I'd watch the sensors. The speed and order in which this plays out will increasingly be decided by where you can profitably deploy them. The sensor economy itself might end up being large, and it'll probably take forms that aren't obvious yet. A humanoid robot in a home is also a sensor. A browser is a sensor. A camera on a farm is a sensor. The innovation won't necessarily happen where the prediction is most valuable in the abstract—it'll happen where you can get the data flowing cheaply enough to make the economics work.
