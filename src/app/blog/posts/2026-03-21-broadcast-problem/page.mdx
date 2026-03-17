@@ -1,0 +1,70 @@
+---
+title: The Broadcast Problem
+published: true
+---
+
+# The Broadcast Problem
+
+Social media is where most public discourse happens now. That's not a controversial claim — it's just where people are. The town square moved, and it moved onto platforms with structural incentives that are deeply misaligned with what makes discourse actually valuable.
+
+I want to be specific about what I think the problem is, because "social media is bad" is true but shallow. What's useful is looking at the actual mechanics — the ranking systems that decide what gets seen and what doesn't — and understanding what behavior they structurally reward.
+
+We can do this now. X open-sourced its recommendation algorithm. LinkedIn has published engineering blog posts on its ranking system. Instagram's head of product has publicly confirmed its core ranking factors. These aren't black boxes anymore. The machinery is visible, and what it reveals is worth examining.
+
+## The broadcast tower
+
+The dominant pattern on every major platform is broadcasting. You post an opinion. You need to keep posting opinions, because that's what generates engagement, and engagement is the oxygen of visibility. Your followers show up, leave approving comments, and move on. Tomorrow you post a different opinion. The cycle repeats.
+
+This isn't an accident or a design flaw that slipped through — it's the logical output of systems that treat novelty and engagement velocity as their primary signals.
+
+Here's what the actual mechanics look like.
+
+**X/Twitter** open-sourced its Heavy Ranker algorithm in 2023, and its weights tell the story bluntly. A like is weighted at 0.5x. A reply is weighted at 13.5x — twenty-seven times more valuable. A reply where the original author responds back is weighted at 75x. That means a single back-and-forth exchange is worth 150 likes. A retweet? Just 1.0x. The system also tracks profile clicks (12x), conversation clicks (11x), and extended dwell time of 2+ minutes (10x). Meanwhile, 50% video completion — which is what most "video-first" strategies optimize for — scores 0.005x. Essentially nothing.
+
+In January 2026, X released its newer Phoenix system, which replaced the Hard Ranker with a Grok-based transformer. The exact weight values were excluded from the open-source release this time, but the code architecture still separates engagement into active signals (replies, author responses, profile clicks, dwell time) and passive signals (likes, video views) as structurally distinct categories. The system tracks 15 engagement types independently. What the architecture tells you, even without the numbers: conversation and passive approval are treated as fundamentally different things.
+
+**LinkedIn** has gone through a parallel shift. Their engineering team published that the algorithm now uses dwell time — how long someone actually pauses on your post — as its primary quality signal. Posts where users spend 61+ seconds reading achieve a 15.6% engagement rate. Posts skimmed in under 3 seconds? 1.2%. Comments carry 15x the algorithmic weight of likes. And the distribution window is brutally narrow: LinkedIn shows your post to 5-10% of your followers in the first 60-90 minutes, measures engagement quality during that window, and then decides whether to expand or kill distribution. If you get 20 comments in the first hour, the algorithm pushes it to 10x more people than if you get the same 20 comments spread over 12 hours.
+
+**Instagram** confirmed through Adam Mosseri in 2025 that its three most important ranking signals are: watch time, sends per reach (how often someone shares your content via DM), and likes per reach. Users decide within 1.7 seconds whether to keep watching. DM shares — a private, high-intent action — are the strongest signal for reaching new audiences. Likes matter, but mainly for retaining existing followers, not for discovery.
+
+The pattern across all three platforms is the same: the systems can distinguish between passive approval and active engagement, and they weight them very differently.
+
+## What this actually optimizes for
+
+Now look at what this produces when you zoom out.
+
+The algorithms technically reward conversation — replies, back-and-forth, dwell time. That sounds like it should produce discourse. But there's a structural catch: the time window in which that conversation matters is absurdly short.
+
+On X, engagement velocity matters more than total engagement. Ten interactions in five minutes outranks a hundred interactions over 24 hours. On LinkedIn, the critical window is 60-90 minutes. On Instagram, users make their decision in 1.7 seconds.
+
+So the system says: "We value conversation." But it also says: "You have about an hour to generate that conversation, and after that we stop caring." The result is rapid-fire opinion broadcasting followed by a brief flurry of reactions, followed by complete disconnection. You can't post about the same thing tomorrow — that's not new, and the algorithm doesn't care about continuity. Every day is a fresh slate of takes, each one competing for a few hours of attention before disappearing.
+
+There's a second structural problem. X applies an author diversity penalty — if you post too frequently, your later posts compete with your earlier posts for the same feed slots. LinkedIn intentionally reduced organic impressions by 63-66% in its shift toward what it calls an "interest graph." These platforms are deliberately constraining how many posts from any one person get seen. The logic makes sense for preventing spam. But the side effect is that each person gets a narrow window to say one thing per day, and that thing had better generate immediate engagement or it vanishes.
+
+The result at scale looks less like a town square and more like a series of pulpits. I broadcast. My followers come and pay tribute. "Great post." "So true." "This." And then we all move on. No one's mind changes. No argument gets sharpened through genuine pushback. No position gets refined over weeks of back-and-forth the way real intellectual progress has always worked.
+
+I find this genuinely ugly to watch at scale. Not because the people are bad — the incentives are pulling everyone toward performance rather than thought.
+
+## The irony in the numbers
+
+Here's what I find darkly funny about the X numbers. The system *technically* values conversation. A reply with author engagement at 75x versus a like at 0.5x is a massive structural preference for dialogue. The algorithm is practically begging people to have discussions.
+
+But the velocity constraint undoes it. You need those replies fast. The "right" strategy isn't to start a thoughtful debate that unfolds over days — it's to say something provocative enough to generate rapid reactions within the first hour, and then reply to those reactions quickly to trigger the author-engagement multiplier. Negative feedback is weighted at -74x and reports at -369x, so you can't go too far. But the optimal play is calibrated controversy: spicy enough to provoke fast replies, measured enough to avoid reports.
+
+That's not discourse. That's a game. And the people who play it best aren't the ones with the most interesting things to say — they're the ones who've learned to time their provocations to the algorithm's clock.
+
+LinkedIn's version of this is subtler but structurally identical. Dwell time rewards longer posts — so people write longer posts. Comments carry 15x the weight of likes — so people end every post with "What do you think? Drop your thoughts below." The first 90 minutes are everything — so people post at calculated times when their audience is online and immediately engage with every comment to boost the signal. It's all responsive to the incentives. And none of it is actually discourse.
+
+## What discourse actually needs
+
+If social media is supposed to be a medium for societal discourse — and I think it still could be — then the ranking systems need to change what they measure.
+
+Right now, a reply needs to arrive within an hour to matter. What if it mattered just as much arriving three weeks later? What if a thread that kept generating thoughtful exchanges over months was treated by the algorithm as *more* interesting than one that burned hot for an hour and died?
+
+What that would look like: someone raises an important question, and then that thread stays alive. Not for hours — for weeks, months. New replies surface it again. The conversation deepens. Thousands of exchanges over time, and the platform treats that *continuation* as the interesting thing, not just the initial take.
+
+That's how real debates work. Someone makes an argument. Someone else pushes back. The first person refines their position. A third person introduces a constraint nobody had considered. This process is slow, and it's supposed to be slow, because nothing important can actually be resolved in the attention span that current platforms allocate.
+
+The numbers show the platforms already know how to weight conversation above passive approval. X's 75x multiplier on author-engaged replies proves the capability exists. LinkedIn's 15x comment weight proves it too. The infrastructure for valuing dialogue is already there. What's missing is temporal patience — the willingness to let a conversation develop over a timeline that matches how humans actually change their minds.
+
+I don't know what the right implementation looks like. Maybe it's threaded discussions with temporal weight that doesn't decay after an hour. Maybe it's something closer to a wiki model layered onto social dynamics. I'm not going to pretend I have the design figured out. But I can name the constraint clearly: the current structure can distinguish between conversation and broadcast, it just refuses to give conversation enough time to become anything real. And until that changes, calling what happens on these platforms "discourse" is generous at best.
