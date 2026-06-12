@@ -1,0 +1,168 @@
+---
+title: Software Engineers Are Not Horses
+published: true
+---
+
+# Software Engineers Are Not Horses
+
+Anthropic recently announced that we've entered recursive self-improvement: the models can now improve themselves, so the rate of improvement keeps going up. And the implied conclusion, repeated across much of the AI discourse, is that this compounds until software engineers — and eventually everyone — become economically useless. Like horses after the engine: nothing left for them to do, put them out on the field. And if we can automate and displace software engineers what is even safe?
+
+I think this conclusion doesn't follow, and the gap between the premise and the conclusion is worth spelling out. The models really are getting better at writing code. That part isn't in dispute. The dispute is about what capability implies.
+
+## Displacement needs more than capability
+
+For "better models" to mean "no more engineers," two further things have to be true. Every bottleneck in producing software has to be cleared. And demand for software has to have a ceiling. Nobody making the displacement argument has shown either, and I don't think either holds.
+
+Start with the bottleneck. AI coding today is, in Balaji's phrase, a middle-to-middle technology, not end-to-end. The model doesn't wake up and start writing software. Someone has to specify what to build, and someone has to verify that what came back is right — and a large share of "right" can't be verified mechanically. The code can be syntactically perfect, the tests can pass, and the thing can still not make sense for the people who are supposed to use it. Until an AI can read your mind, produce exactly the software you wanted regardless of your ability to articulate it, and do so faster than human+ai, somebody has to drive the model. The scarce input has moved; it hasn't disappeared. It used to be code production. Now it's judgment. As we will see later this middle-to-middle property of AI is crucially important.
+
+And there's no ceiling in sight. We have never, at any point in the history of the field, run out of useful software to write. Every productivity gain so far — compilers, open source, cloud, frameworks — was absorbed by more demand, not fewer engineers. This is Jevons paradox doing what it always does: when code gets cheaper, more things become worth building. Displacement would require someone to stand up and say "we have now written all the useful software; no more is needed." Nobody believes that.
+
+## The glass of water
+
+There's a mental model of automation underneath the doom argument that's worth dragging into the light. It treats your work as a glass of water. Automation drinks from the glass, and when the glass is empty, you're the horse: nothing useful left for you to do, off to the field.
+
+Fine. Let's grant the model entirely. Now ask the question the model actually turns on: how big is the glass?
+
+The horse had a shot glass. A horse sells exactly two services to the economy: it can carry something on its back, and it can pull something. The engine did both: Glass empty. Horse done. That's why the horse story is true — and also why it doesn't generalize. A human is not a two-function machine. We specify, verify, persuade, judge, coordinate, teach, entertain, comfort, and want things. Emptying the human glass doesn't mean automating your current task list; it means replicating the entire space of things humans usefully do for one another. That is a vastly stronger requirement than "writes good code," and nobody is close to demonstrating it.
+
+And the glass isn't even fixed. This is where the static metaphor breaks down in the doomers' hands: automation doesn't just drink, it refills. Every time a task gets automated, new tasks become economical that weren't worth doing before. Cheaper code means more software is worth writing. When ATMs made bank branches cheaper to run, banks opened more branches — and teller employment went up, not down, for thirty years. 
+
+Engines did not improve horses but tools often improve humans.
+
+So the displacement argument actually requires three claims, not one: that your current tasks get automated, that nothing new becomes worth doing, and that you don't get any better with the new tools yourself. History is zero-for-three. We have automated essentially every task anyone performed 1,000 years ago and most tasks performed 100 years ago, and employment is near record highs. Nobody in 1900 had "UX designer", "YouTuber" or "AI Engineer" in their glass. They do now.
+
+## What the data actually shows
+
+If AI were on track to annihilate software engineering, you'd expect to see it in the numbers. You don't. The BLS projects 15% growth for software developers through 2034 — much faster than average.[^1] Total developer headcount is rising year over year, and so is median compensation.[^2]
+
+It's true that job postings collapsed from their 2022 peak, and this gets waved around constantly as evidence. But the timeline doesn't support it: postings peaked in early 2022 and fell off a cliff as interest rates rose — months before ChatGPT existed. That collapse is the hangover from the 2021–22 over-hiring binge, not the models.[^3]
+
+The signal AI actually shows up in is more interesting: the market is restructuring, not shrinking. Senior hiring grew on the order of 25% last year, senior compensation is climbing 8–12% annually, and time-to-fill for senior roles keeps dropping.[^4] Why? Because the bottleneck moved to exactly where the middle-to-middle argument says it should: review, specification, judgment. The market is paying a rapidly growing premium for the part of the job the models can't do. That's not what displacement looks like. That's what a bottleneck looks like.
+
+## The junior squeeze is real — and we've seen it before
+
+There's one part of the doom case I take seriously: entry-level hiring is genuinely getting squeezed. Employment for software developers aged 22–25 is down roughly 20% from its late-2022 peak, while it grew for engineers in their late thirties and forties.[^5] One study puts the post-ChatGPT drop in junior relative to senior job vacancies at 16.3%.[^6] The tasks that used to train juniors are precisely the tasks the models do well, so firms are hiring seniors and automating the bottom rung. That's real, it's painful for the cohorts graduating right now, and waving it away would be dishonest — occupations die painlessly in the statistics, much less so in an individual life.
+
+But we have run this exact experiment before. After the dot-com bust, entry-level tech hiring cratered and everyone declared the career dead. CS enrollments fell by as much as 50% at some universities. Then the industry recovered — IT employment surpassed pre-crash levels by 2005 — and the cohort that fled the field missed the best entry window in a generation, walking past a shortage that employers spent the next decade complaining about.[^7]
+
+The playbook is familiar: the pipeline over-corrects, a shortage follows, and the correction begins about the time Azure's CTO starts publishing op-eds about the collapsing talent pipeline — which he did in April.[^8] You can't make senior engineers without junior engineers, and firms that defect on training will end up bidding against each other for the seniors somebody else trained. The market sorts this out the way it always has: through prices.
+
+## Occupations get redefined, not deleted
+
+The dot-com bust was a cycle, though. What about the technology itself — what happens when the machine genuinely takes over an occupation's tasks? The historical pattern is consistent: ATMs were supposed to eliminate tellers; teller jobs grew.[^9] E-discovery software was supposed to eliminate paralegals; paralegal employment rose. Spreadsheets killed manual ledger work and the number of accountants exploded.[^10] The most instructive case is the one closest to today's fear: human computers — entire rooms of people doing calculation by hand — were wiped out completely by the electronic computer. The occupation died, and the calculation professions exploded by orders of magnitude in its place: actuaries, analysts, quants, data scientists. Many of the human computers became the first programmers. In every case the technology killed the routine task, the cost reduction expanded demand for the output, and the role was redefined rather than deleted.
+
+How rare is actual deletion? Of the 270 occupations listed in the 1950 US Census, automation has fully eliminated exactly one: elevator operators.[^11] And even there, the punchline runs the wrong way for the doomers — elevator installers and repairers are today the highest-paid blue-collar trade in America, with a median wage above $106,000, more than double the median for all US workers, no college degree required.[^12] The job of riding along and pressing the button was worth little precisely because it was easy. The value moved one rung up the stack, to the people who maintain and verify a safety-critical machine. That is the software argument in miniature.
+
+## Who pays for the transition
+
+Saying "it worked out every time before" is true and also not the whole story. The aggregate works out; specific people pay. It's worth being precise about who, because the historical record points to a specific split — and it isn't "everyone in the affected occupation."
+
+The best-studied case is the disappearance of hand-picked cotton, which played out in two phases. In the first phase, labor left before the machines arrived: workers were pulled north by industrial wages that farm work couldn't match, and wartime labor shortages made hand labor scarce and expensive. The econometric estimates attribute the majority of the decline in hand-picking to that pull — Peterson and Kislev put it at nearly four-fifths.[^13] Farmers didn't want to mechanize; hand labor was familiar and the machines were expensive and unproven. They adopted the picker because the workers had found something better. This is the general pattern economists call induced innovation: labor-saving technology mostly gets adopted *in response to* labor becoming scarce or expensive, not the other way around.[^14] The machine is usually the economy's answer to "the workers left," not the cause of them having nowhere to go.
+
+But there was a second phase. Once the machine was cheap and proven, it finished the job — Grove and Heinicke's data on 1949–1964 shows collapsing demand driving out whoever still remained in the fields.[^15] And those people, the ones still hand-picking cotton fifteen years after the exodus began, took the hit with the fewest alternatives and the least compensation. The same asymmetry shows up in every transition since: displaced manufacturing workers in the 1980s who waited for the old jobs to come back saw permanent earnings declines of 20 percent and more, while those who moved early moved up.[^16] The pain is real, but it isn't distributed randomly and it isn't distributed evenly across the occupation. It concentrates on whoever is still standing in the old spot when the second phase arrives.
+
+That's the honest version of "it will be painful for those who don't adapt" — not a moral judgment, just the mechanics. The first movers get the pull: better wages somewhere else, or more leverage in the same job with the new tool. The transition's costs land on the holdouts, and on the unlucky cohort that happens to be standing on the bottom rung when the ladder gets redesigned. Which is exactly why the right response to AI, for an individual engineer and everyone else, is boring: learn the tool early, move toward the judgment work, and don't be the last person hand-picking the cotton.
+
+## What about the Luddites?
+
+Any honest version of this argument has to face the canonical counterexample, because there is one transition in the record where the glass really did empty and the people really did drown: the handloom weavers.
+
+Even there, the front half follows the familiar script. Factory spinning in the 1780s made yarn cheap, demand for handloom weavers boomed, and their earnings rose into what's remembered as the golden age of the handloom weaver. And then induced innovation did its usual thing, with a cruel twist: precisely because weaver wages were high, building a power loom became profitable. The cottage industry's own prosperity summoned the machine that killed it.[^17]
+
+The back half is the worst on record. Real wages for handloom weavers more than halved between 1806 and 1820.[^18] Their numbers went from 250,000 around 1800 to 7,000 sixty years later.[^19] There was no nearby redefined role: power looms needed far fewer, less-skilled operators at lower pay, so several hundred thousand skilled, autonomous, well-paid artisans were replaced by a smaller number of worse-paid factory hands. The pain lasted a generation, the gains went elsewhere, and it was bad enough that David Ricardo — the founder of the "machinery creates more demand for labor" position — publicly reversed himself. The Luddites, for what it's worth, weren't anti-technology; many were skilled machine operators. They were protesting exactly this.
+
+So why doesn't this case sink the argument? Look at what made it so bad. The escape routes were closed: the Napoleonic Wars had wrecked the economy, unemployment was already high, and there was no booming sector pulling weavers out. The holdouts held out for decades, working the handloom at ever-falling wages. The catastrophe wasn't caused by the loom alone; it was the loom arriving into an economy with no exits.
+
+But there's a deeper difference, and it's the one this whole essay turns on. The power loom was a single-purpose machine. It loomed. It was useless for anything else, and — like the engine to the horse — it offered the weaver nothing. A weaver couldn't pick up the power loom and become a better weaver; the machine simply was the weaving, and the weaver's skill was worth nothing to it.
+
+AI is not a loom. It's the most general-purpose tool ever built, it's in the hands of the people it supposedly displaces, and it makes them better at their own job the moment they pick it up. The weaver's machine emptied one glass and refilled none. This one refills the glass while it drinks — which is precisely why the weavers' fate, real as it was, is the wrong precedent. The right worry isn't the loom scenario; it's the ordinary transition pain of the previous section, concentrated on holdouts and unlucky cohorts. That pain is real. It is not extinction.
+
+## Tools differentiate, they don't flatten
+
+One more assumption hiding in the displacement story: that AI hits everyone equally, so everyone gets displaced together. Whether that's true depends on what kind of tool AI is — and by now we have the ingredients to sort tools into two kinds, because we've seen both in the history above.
+
+The first kind is a fridge. You don't become a better fridge user by understanding how it works, and ten years of fridge experience makes you no better at it than ten days. The fridge flattens: everyone gets the same output, skill is irrelevant. The power loom was a fridge — it simply was the weaving, and the weaver's skill meant nothing to it. The engine was a fridge to the horse. This is the kind of tool that just drinks the glass: it does the whole job itself, offers nothing to the person it replaces, and the displaced walk away with empty hands. Every genuine automation catastrophe in the record involves this kind of tool meeting workers with no exits.
+
+The second kind is the car, the computer — tools where skill compounds. There are good drivers and bad drivers, and at the extreme, most people can't drive a Formula 1 car at all. Knowing how a computer works makes you a dramatically better user of it, and you keep improving with experience, with no obvious ceiling. These tools don't flatten differences between people; they amplify them, and the gap is measured in time and money. And historically, these are the tools that generate broad prosperity rather than concentrated ruin — not because they're gentler, but because the people they touch get to keep their skill and pour it into the new tool. The spreadsheet didn't empty the accountants' glass; the accountants picked it up and the profession exploded. The computer didn't delete the human computers' expertise; it turned the best of them into the first programmers.
+
+AI is plainly the second kind — maybe the most extreme example of it ever built. The gap between a novice and an expert prompting the same model is enormous, and better models don't close it: the engineer who is good at specifying and verifying gets far more leverage out of each improvement than the one who isn't. That's also the grounds for the larger bet of this essay. If AI were a fridge, the doomers would be right and the glass would empty. Because it's a skill-compounding tool in the hands of everyone it touches, the historical reference class isn't the loom and the horse — it's the computer and the spreadsheet, the tools that made the people who used them richer and the world bigger.
+
+What does that differentiation do in practice? It re-sorts the job around what was being sold all along. Drivers were never selling "operating pedals" — they were selling getting someone where they wanted to go. Engineers were never selling typing. They were selling the translation of a fuzzy human want into a working system, and the confirmation that the system serves the want. The models take over the typing, and the weight of the job shifts onto the translation — the part where differences between people are largest and compound fastest. That's how this kind of tool creates prosperity instead of just drinking the glass: it strips away the work everyone could do and hands each person more leverage on the work only they can do. The translation is the job, and it's a skill that compounds.
+
+## The fork: from generic skill to domain expertise
+
+So where does the job actually go when the typing falls away? History gives a specific answer, and it isn't "up in smoke." It's a fork.
+
+Look again at what happened to the human computers. The generic skill — calculation — was automated wholesale. But the survivors didn't become better generic calculators; the profession forked into calculation fused with a domain. Calculation plus insurance risk became the actuary. Calculation plus markets became the quant and the trader. Calculation plus whoever owns the data became the data scientist. The generic skill became the substrate everyone stands on, and the domain knowledge became the scarce, highly paid part. The same fork shows up wherever the routine layer dissolves: typesetters forked into graphic designers and desktop publishers; tellers forked into relationship bankers.
+
+There's now a formal version of this argument. Autor and Thompson's expertise framework, built on four decades of US occupation data, finds that what automation does to a job depends on which tasks it removes. Remove the *expert* tasks and the job becomes accessible to everyone — employment grows, wages fall. Remove the *routine* tasks and the remaining bundle becomes more specialized — wages rise, because fewer people qualify.[^20] The doom argument implicitly assumes AI is doing the first thing to engineering. The wage data says it's doing the second: the models are eating the routine layer, and the expertise premium is going up, exactly as the framework predicts. In their words, tools end up collaborating with experts, "acting as a lever for their knowledge, shortening the distance between human intention and material result."[^21] AI is middle-to-middle.
+
+And you can already see the engineering version of the fork in the hiring data. The fastest-growing role at startups is the product engineer: the base mechanical skill plus customer context — someone who can go from user problem to shipped product without three handoffs in between. Early-stage companies now prioritize them for their first dozen engineering hires, on exactly the logic this essay has been building: implementation is becoming a commodity, so the scarce input is judgment about what to build.[^22] Notably, it's the engineers with the *deepest* technical grounding who get the most out of the models — they're the ones who can see at a glance where the generated code is wrong. The fork is skill plus domain, not domain instead of skill, just as the actuary still needs the math.
+
+This is also where the prosperity comes from, concretely. When the person who understands the customer's problem is the same person who builds the solution, the product fits the want better — teams that have collapsed the spec-design-build handoff chain report dramatically higher feature adoption.[^23] The gain isn't producing the same software cheaper; it's the translation loop getting shorter and the products getting better. Multiply that across every domain that has been waiting in line for scarce engineering capacity, and that's what it looks like when the glass refills with higher-value water.
+
+The fork doesn't run all the way up: at the scale of a Google or a Meta, specialization reasserts itself, and the back-end specialist isn't going anywhere. The claim is about the center of gravity. Generic implementation is going the way of generic calculation — and the people standing on it are forking into the domains, the way the calculators became actuaries.
+
+## A bump on a very long curve
+
+Zoom all the way out. Human beings wake up, go to work, and trade time for money — money being, at bottom, a ledger of favors. I do something useful for you, you do something useful for me, and we're both slightly better off. Out of that daily trade we grow the world a little.
+
+That arrangement has now held through many orders of magnitude of technological progress. From the plough to the data center, a modern worker produces in hours what once took lifetimes — and the underlying transaction never changed. The sail, the water wheel, the combustion engine, the computer, the internet: each one dramatically increased the speed at which we could trade favors, each one was supposed by someone at the time to break the arrangement, and none of them touched it. The incentives that drive it — humans wanting things, and other humans being able to provide them — don't depend on any particular level of technology.
+
+We've even run the full-scale version of the experiment. In 1790, ninety percent of the American workforce worked on farms; today it's under two percent.[^24] We reabsorbed nearly the entire working population of a country — twice, first from farm to factory, then from factory to services — into jobs nobody could have named in advance. Roughly sixty percent of the jobs that exist today didn't exist in 1940.[^25] "It's not obvious where these people will work in two generations" isn't a crisis; it's the permanent, normal condition of the economy. The destination has never once been visible from the departure point.
+
+AI is one of the bigger bumps on that curve — possibly one of the biggest. The world in twenty years will look very different, and the transition will be genuinely rough for people whose plans assumed the world would stay still; transitions always are. But a big bump is still a bump on the same curve, and an arrangement that survived every previous order of magnitude doesn't stop working because this bump is ours.
+
+The engineers won't be horses. Nor will people in general. The horse's glass held two sips. Ours has no visible bottom, and the tap is running.
+
+---
+
+[^1]: U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: [Software Developers, Quality Assurance Analysts, and Testers](https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm). Projected employment change 2024–34: +15% (+287,900 jobs).
+
+[^2]: See e.g. [AI Coding and the Developer Job Market 2026](https://blog.vibecoder.me/ai-coding-developer-job-market-2026) (BLS/LinkedIn/GitHub data: total US developer employment ~4.6M in early 2026, up ~4% YoY; median compensation $128,400, up ~6%) and [Engineering hiring market in 2026](https://cadence.withremote.ai/blog/engineering-hiring-market-2026) (CompTIA: active US tech listings up 8.9% YoY in March 2026).
+
+[^3]: Indeed Hiring Lab, [The US Tech Hiring Freeze Continues](https://www.hiringlab.org/2025/07/30/the-us-tech-hiring-freeze-continues/) — tech postings peaked in early 2022 at more than double their February 2020 level and plunged as the Fed hiked rates, before ChatGPT's release in November 2022.
+
+[^4]: [AI Coding and the Developer Job Market 2026](https://blog.vibecoder.me/ai-coding-developer-job-market-2026) (senior hiring +26% in 2025, senior comp on track for 8–12% annual increases) and [Engineering hiring market in 2026](https://cadence.withremote.ai/blog/engineering-hiring-market-2026) (senior AI-fluent engineers fill in 17 days).
+
+[^5]: Stanford Digital Economy Lab, via Stack Overflow, [AI vs Gen Z](https://stackoverflow.blog/2025/12/26/ai-vs-gen-z/) — employment of software developers aged 22–25 down nearly 20% from late-2022 peak; up 9% for workers 35–49 in AI-exposed jobs.
+
+[^6]: Modestino et al., [The Impact of Generative AI on Software Developer Employment](https://aliciasassermodestino.com/wp-content/uploads/2025/06/Impact_of_GenAI_on_SWEs_061625.pdf) — ChatGPT's release reduced junior software developer vacancies by 16.3% relative to senior roles over the following 12 months.
+
+[^7]: Eric Roberts, [A History of Capacity Challenges in Computer Science](https://cs.stanford.edu/people/eroberts/CSCapacity/CSCapacity-History2000s.html) — IT employment surpassed pre-crash levels by 2005 while CS enrollments stayed depressed for years; see also the National Academies' [workforce analysis](https://www.ncbi.nlm.nih.gov/sites/books/NBK36350/) (enrollment declines of up to 50% by fall 2002).
+
+[^8]: Russinovich & Hanselman, Communications of the ACM, covered by InfoQ: [Microsoft's Russinovich and Hanselman Warn AI Is Hollowing out the Junior Developer Pipeline](https://www.infoq.com/news/2026/04/junior-developer-pipeline-crisis/).
+
+[^9]: Autor, ["Why Are There Still So Many Jobs?"](https://economics.mit.edu/sites/default/files/publications/why%20are%20there%20still%20jobs%202014.pdf) (JEP 2015), drawing on Bessen — US teller employment rose from ~500,000 (1980) to ~550,000 (2010) while ATMs quadrupled.
+
+[^10]: Bessen, [How computer automation affects occupations](https://cepr.org/voxeu/columns/how-computer-automation-affects-occupations-technology-jobs-and-skills) (CEPR/VoxEU) — paralegals grew after e-discovery software; cashiers grew after barcode scanners; typesetters shifted into graphic design and desktop publishing.
+
+[^11]: Bessen, ibid. — of the 270 detailed occupations in the 1950 US Census, only one (elevator operators) was eliminated by automation.
+
+[^12]: U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: [Elevator and Escalator Installers and Repairers](https://www.bls.gov/ooh/construction-and-extraction/elevator-installers-and-repairers.htm) — median wage $106,580 (May 2024) vs. $49,500 for all workers; entry requirement: high school diploma plus apprenticeship.
+
+[^13]: Peterson & Kislev, [The Cotton Harvester in Retrospect: Labor Displacement or Replacement?](https://www.cambridge.org/core/journals/journal-of-economic-history/article/abs/cotton-harvester-in-retrospect-labor-displacement-or-replacement/274346DBDA436A047E7DBC687A56221F) (Journal of Economic History) — 79% of the reduction in hand-picking attributed to higher non-farm wages. See also Holley, [The Second Great Emancipation](https://www.uapress.com/product/the-second-great-emancipation/) (migration preceded mechanization in the Delta) and the [EH.net overview](https://eh.net/encyclopedia/mechanical-cotton-picker/).
+
+[^14]: Hicks (1932), formalized by Hayami & Ruttan; accessible summary in Bellemare, [Is Necessity the Mother of Invention?](https://marcfbellemare.com/wordpress/10585), including Hanlon's Econometrica confirmation of the mechanism.
+
+[^15]: Grove & Heinicke, ["Better Opportunities or Worse?"](https://webserver.lemoyne.edu/grovewa/jehbetterorworsefinalversion.pdf) (Journal of Economic History, 2003) — demand-side shifts (mechanization plus federal acreage-reduction programs) dominated the 1949–1964 disappearance of hand-picked cotton.
+
+[^16]: Files for Progress, [A Brief History of Displacement](https://www.filesforprogress.org/memos/a-history-of-worker-displacement.pdf) — median TAA recipient saw a 20% earnings decline; some displaced defense-industry workers lost 50%.
+
+[^17]: Allen, [The Hand-Loom Weaver and the Power Loom: A Schumpeterian Perspective](https://www.economics.ox.ac.uk/publication/1143610/ora-hyrax) (Oxford) — the golden age's high weaver earnings raised the value of labor the power loom could save, inducing its development.
+
+[^18]: Acemoglu & Johnson, [Learning from Ricardo and Thompson](https://shapingwork.mit.edu/wp-content/uploads/2024/04/Acemoglu_Johnson_April-2024.pdf) (Annual Review of Economics, 2024) — weaver wages fell from ~240 pence/week (1806) to under 100 (1820); includes Ricardo's reversal on machinery.
+
+[^19]: National Geographic, [Before AI skeptics, Luddites raged against the machine](https://www.nationalgeographic.com/history/article/luddite-industrial-revolution-anti-technology) — British handloom weavers fell from ~250,000 around 1800 to ~7,000 sixty years later; also documents that Luddites were skilled machine operators protesting wages and conditions, not technology as such.
+
+[^20]: Autor & Thompson, [Expertise](https://economics.mit.edu/sites/default/files/2025-06/Expertise-Autor-Thompson-20250618.pdf) (2025) — automation that eliminates inexpert tasks raised wages and reduced employment; automation that eliminates expert tasks did the reverse, across four decades of US occupation data.
+
+[^21]: Autor & Thompson, [Beyond Job Displacement](https://www.digitalistpapers.com/vol2/autorthompson) (Digitalist Papers).
+
+[^22]: See [Product Engineer vs Software Engineer](https://techstaq.io/product-engineer-vs-software-engineer/) (most early-stage startups in 2026 prioritize product engineers for their first 5–15 engineering hires; "the scarcest resource is no longer raw coding capacity; it is judgment about what to build") and Atlassian, [AI turns software engineers into product engineers](https://www.atlassian.com/blog/artificial-intelligence/how-ai-turns-software-engineers-into-product-engineers).
+
+[^23]: Atlassian, ibid. — teams that collapsed the sequential product–design–engineering handoff report ~70% higher feature adoption.
+
+[^24]: HumanProgress, [The Changing Nature of Work](https://humanprogress.org/trends/the-changing-nature-of-work/) — US farm employment fell from 90% of the workforce in 1790 to under 2% today; manufacturing peaked at 38% in 1944; services rose from 31% (1900) to 81%.
+
+[^25]: Autor et al., covered in [MIT News](https://news.mit.edu/2024/does-technology-help-or-hurt-employment-0401) — about 60% of US jobs in 2018 represent types of work that did not exist in 1940.
